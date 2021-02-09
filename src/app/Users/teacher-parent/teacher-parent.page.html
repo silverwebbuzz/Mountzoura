@@ -1,0 +1,31 @@
+<ion-content>
+
+  <div class="div_logo">
+    <img src="../../assets/images/logoWithUpIcon.png" class="img_logo"/>
+  </div>
+
+  <ion-label class="lbl_ no_spc">{{'screen1.lable1' | translate }}</ion-label>
+
+  <ion-row>
+    <ion-col size="6">
+      <div class="div_teacher">
+        <img src="../../assets/images/teachers.png" class="img_teacher"/>
+      </div>
+      <ion-button expand="full" class="btn_footer" (click)="teacher('teacher')">{{'screen1.teacher' | translate }}</ion-button>
+    </ion-col>
+    <ion-col size="6">
+      <div class="div_teacher">
+        <img src="../../assets/images/romance.png" class="img_teacher"/>
+      </div>
+      <ion-button expand="full" class="btn_footer" (click)="parent('parent')">{{'screen1.parent' | translate }}</ion-button>
+    </ion-col>
+  </ion-row>
+
+  <ion-label class="lbl_">{{'screen1.lable2' | translate }}</ion-label>
+
+  <ion-label class="lbl_">{{'screen1.lable3' | translate }}</ion-label>
+
+</ion-content>
+<ion-footer>
+  <ion-button expand="full" size="large" class="btn_footer" (click)="next()">{{'screen1.next step' | translate }} >></ion-button>
+</ion-footer>

@@ -1,0 +1,122 @@
+.lbl_lang{
+  padding: 16px;
+  text-align: center;
+  font-size: 18px;
+  .option{
+    margin-left: 10px;
+  }
+}
+
+ion-content {
+    --padding-start: 16px;
+    --padding-end: 16px;
+    --padding-top: 16px;
+    --padding-bottom: 16px;
+  
+    .div_logo {
+      text-align: center;
+      margin: 32px;
+      .img_logo {
+        width: 200px;
+      }
+    }
+    .login_form {
+      margin-bottom: 14px;
+    }
+    .btn_login {
+      margin: 0 auto !important;
+      width: 88%;
+      color: white;
+      text-transform: none;
+      --border-radius: 8px;
+    }
+    .div_main_or {
+      overflow: hidden;
+      margin-bottom: 8px;
+      margin-top: 14px;
+      text-align: center;
+    }
+    .div_or {
+      position: relative;
+      display: inline-block;
+    }
+    .div_or span {
+      height: 45px;
+      width: 45px;
+      border-radius: 50%;
+      border: 1.5px solid var(--ion-color-primary);
+      color: black;
+      display: inline-block;
+      z-index: 9;
+      vertical-align: middle;
+      line-height: 2.8;
+      font-size: 16px;
+    }
+    .div_social_btn {
+      margin: 14px 0px;
+      .row_fb {
+        background: #1976d2;
+        border-top-left-radius: 16px;
+        border-top-right-radius: 16px;
+        width: 88%;
+        margin: auto;
+        border-bottom: 0.5px solid #fff;
+        .col_fb {
+          margin: auto;
+          .img_fb {
+            height: 28px;
+          }
+          .lbl_fb {
+            color: white;
+            font-size: 16px;
+          }
+        }
+      }
+      .row_google {
+        background: #ed8551;
+        border-bottom-left-radius: 16px;
+        border-bottom-right-radius: 16px;
+        width: 88%;
+        margin: auto;
+        border-top: 0.5px solid #fff;
+        .col_google {
+          margin: auto;
+          .img_google {
+            height: 28px;
+          }
+          .lbl_google {
+            color: white;
+            font-size: 16px;
+          }
+        }
+      }
+    }
+    .lbl_forgot {
+      display: block;
+      text-align: center;
+      font-size: 18px;
+      text-decoration: underline;
+      font-family: Comfortaa-SemiBold;
+      margin: 16px 0px;
+    }
+    .div_empty {
+      height: 30px;
+    }
+  }
+  // .img_profile_footer{
+  //   height: 125px;
+  //   width: 125px;
+  //   position: absolute;
+  //   bottom: 48px;
+  //   left: 8px;
+  //   // z-index: 999;
+  // }
+  ion-footer {
+    position: fixed;
+    bottom: 0;
+    .btn_footer {
+      margin: 0px;
+      color: white;
+      text-transform: none;
+    }
+  }

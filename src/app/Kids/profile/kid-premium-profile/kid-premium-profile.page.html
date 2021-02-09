@@ -1,0 +1,57 @@
+<ion-header class="appBar1">
+  <ion-toolbar class="bg">
+    <img src="../../../../assets/images/directional.png" slot ="start" class="img_tool_arrow" (click)="back()"/>
+    <img src="../../../../assets/images/logoWithoutIcon.png" class="img_logo"/>
+    <img src="../../../../assets/images/gear.png" slot="end" class="img_tool_setting" (click)="settings()"/>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="div_img">
+    <img  *ngIf="gender == 'boy'" src="../../../../assets/images/profile-premium.png" class="img_person"/>
+    <img  *ngIf="gender == 'girl'" src="../../../../assets/images/girl-premium.png" class="img_person"/>
+    <!-- <img src="../../../../assets/images/premium.png" class="img_prem"/> -->
+  </div>
+
+  <form [formGroup]="profile_form" autocomplete="off" class="form_all">
+
+    <ion-item lines="none" class="input-item add space">
+      <ion-input type="text" formControlName="name" placeholder="{{'reusable.place_name' | translate }}" class="input-box">
+      </ion-input>
+    </ion-item>
+
+    <ion-item no-padding lines="none" class="validator-error error-spc"
+      *ngIf="profile_form.controls.name.hasError('required') && profile_form.controls.name.touched">
+      <p class="content add-error">{{'reusable.err_name' | translate}}</p>
+    </ion-item>
+
+    <ion-item lines="none" class="input-item add space">
+      <ion-input type="text" formControlName="grade" placeholder="A` {{'reusable.grade' | translate }}" class="input-box">
+      </ion-input>
+    </ion-item>
+
+    <ion-item no-padding lines="none" class="validator-error error-spc"
+      *ngIf="profile_form.controls.grade.hasError('required') && profile_form.controls.grade.touched">
+      <p class="content add-error">{{'reusable.err_grade' | translate }}</p>
+    </ion-item>
+
+    <ion-item lines="none" class="input-item add space">
+      <ion-input type="text" formControlName="id" placeholder="#000100" class="input-box">
+      </ion-input>
+    </ion-item>
+
+    <ion-item no-padding lines="none" class="validator-error error-spc"
+      *ngIf="profile_form.controls.id.hasError('required') && profile_form.controls.id.touched">
+      <p class="content add-error">{{'reusable.err_kid_profile_id' | translate }}</p>
+    </ion-item>
+
+    </form>
+
+    <ion-button expand="block" size="large" class="btn_play btn_all" (click)="home_kid()">{{'single.btn_play' | translate }}</ion-button>
+   <br>
+    <ion-button expand="block" size="large" class="btn_play btn_all" (click)='homework()'>{{'reusable.btn_work' | translate}}</ion-button>
+
+    <ion-label class="lbl_cancel" (click)="subscription()">{{'single.lbl_cancel' | translate }}</ion-label>
+
+</ion-content>

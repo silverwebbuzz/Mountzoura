@@ -1,0 +1,32 @@
+<ion-content>
+
+  <div class="div_logo">
+    <img src="../../assets/images/logoWithUpIcon.png" class="img_logo"/>
+  </div>
+
+  <ion-label class="lbl_">
+    {{'forgot.label1' | translate}}
+  </ion-label>
+
+  <form [formGroup]="forgot_form" autocomplete="off" class="forgot_form">
+
+    <ion-item lines="none" class="input-item add space">
+      <ion-input type="email" formControlName="email" placeholder="{{'forgot.place_email' | translate}}" class="input-box">
+      </ion-input>
+    </ion-item>
+
+    <ion-item no-padding lines="none" class="validator-error error-spc"
+      *ngIf="forgot_form.controls.email.hasError('required') && forgot_form.controls.email.touched">
+      <p class="content add-error">{{'forgot.err_email' | translate}}</p>
+    </ion-item>
+
+    <ion-item no-padding lines="none" class="validator-error error-spc"
+      *ngIf="forgot_form.controls.email.hasError('incorrect') && forgot_form.controls.email.touched">
+      <p class="content add-error">Email Address Does Not Exists.</p>
+    </ion-item>
+
+    </form>
+
+    <ion-button expand="block" size="large" class="btn_footer btn_login" (click)="submit()">{{'forgot.submit' | translate}}</ion-button>
+
+</ion-content>

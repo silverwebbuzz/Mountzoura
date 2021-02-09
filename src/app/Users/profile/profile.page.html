@@ -1,0 +1,83 @@
+<ion-header class="appBar1">
+  <ion-toolbar class="bg">
+    <img src="../../../assets/images/directional.png" slot="start" class="img_tool_arrow" (click)="back()"/>
+    <ion-title class="title_all">{{'profile.head' | translate}}</ion-title>
+    <img src="../../../assets/images/icon.png" slot="end" class="img_tool_logo"/>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <form [formGroup]="profile_form" autocomplete="off" class="form_all">
+    
+  <div class="div_profile">
+    <!-- <img *ngIf="!select_product_image" src="{{user_not_found_place_holder}}" class="img_profile" /> -->
+    <img *ngIf="select_product_image" src="{{mediaUrl_image ? select_product_image : select_product_image}}"
+      class="img_profile" />
+    <input class="btn-choose" type="file" formControlName="image" (change)="imageUpload($event)" accept="image/*"/>
+  </div>
+
+    <ion-item lines="none" class="input-item add space">
+      <ion-input type="text" formControlName="name" placeholder="{{'reusable.place_name' | translate}}" class="input-box">
+      </ion-input>
+    </ion-item>
+
+    <ion-item no-padding lines="none" class="validator-error error-spc"
+      *ngIf="profile_form.controls.name.hasError('required') && profile_form.controls.name.touched">
+      <p class="content add-error">{{'reusable.err_name' | translate}}</p>
+    </ion-item>
+
+    <ion-item lines="none" class="input-item add space">
+      <ion-input type="text" formControlName="surname" placeholder="{{'profile.place_sname' | translate}}" class="input-box">
+      </ion-input>
+    </ion-item>
+
+    <ion-item no-padding lines="none" class="validator-error error-spc"
+      *ngIf="profile_form.controls.surname.hasError('required') && profile_form.controls.surname.touched">
+      <p class="content add-error">{{'profile.err_sname' | translate}}</p>
+    </ion-item>
+
+    <ion-item lines="none" class="input-item space">
+      <ion-select interface="action-sheet" formControlName="area" placeholder="{{'profile.area' | translate}}" 
+      class="btn-select bg dropWidth" mode="md" [(ngModel)]="selectedMeasureSetId" (ionChange)="onChangePropertyType($event)">
+        <ion-select-option *ngFor="let opt of alist" [value]="opt.id">{{opt.name}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <!-- <ion-select name="measureSetSelect" [(ngModel)]="selectedMeasureSetId">
+      <ion-select-option *ngFor="let measureSet of measureSets" [value]="measureSet.id">
+        {{measureSet.name}}
+      </ion-select-option>
+    </ion-select> -->
+
+    <ion-item no-padding lines="none" class="validator-error"
+      *ngIf="profile_form.controls.area.hasError('required') && profile_form.controls.area.touched">
+      <p class="content">{{'profile.err_area' | translate}}</p>
+    </ion-item>
+
+    <ion-item lines="none" class="input-item space">
+      <ion-select interface="action-sheet" formControlName="sub_area" placeholder="{{ 'reusable.place_sub_area' | translate }}"
+        class="btn-select bg dropWidth" mode="md" [(ngModel)]="selectedsubId">
+        <ion-select-option *ngFor="let opt of sublist" [value]="opt.id">{{opt.name}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item no-padding lines="none" class="validator-error"
+    *ngIf="profile_form.controls.sub_area.hasError('required') && profile_form.controls.sub_area.touched">
+    <p class="content">{{ 'reusable.err_sub_area' | translate }}</p>
+  </ion-item>
+
+    <ion-item lines="none" class="input-item add">
+      <ion-input type="password" formControlName="password" placeholder="{{'profile.place_pass' | translate}}" class="input-box"></ion-input>
+    </ion-item>
+
+    <ion-item no-padding lines="none" class="validator-error error-spc"
+      *ngIf="profile_form.controls.password.hasError('required') && profile_form.controls.password.touched">
+      <p class="content add-error">{{'profile.err_pass' | translate}}</p>
+    </ion-item>
+
+  </form>
+
+  <ion-button expand="block" size="large" class="btn_footer btn_all" (click)="submit()">{{'profile.submit' | translate}}</ion-button>
+
+</ion-content>

@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar class="bg">
+    <img src="../../../assets/images/directional.png" slot="start" class="img_tool_arrow" (click)="back()"/>
+    <img src="../../../assets/images/logoWithoutIcon.png" class="img_head"/>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-label color="primary" class="lbl_title">{{'terms.title' | translate}}</ion-label>
+
+  <ion-label class="lbl_">
+    <h2 [innerHTML]="dec ? dec : '' "></h2>
+  </ion-label>
+
+  <!-- <ion-label class="lbl_">
+    {{'terms.label1' | translate}}
+  </ion-label>
+
+  <ion-label class="lbl_">
+    {{'terms.label2' | translate}}
+  </ion-label> -->
+
+  <ion-button *ngIf="!token" expand="block" size="large" class="btn_agree" (click)="close('1')">{{'terms.btn_agree' | translate}}</ion-button>
+
+  <div *ngIf="!token">
+  <ion-label class="lbl_dont" (click)="close('0')">
+    {{'terms.btn_dont' | translate}}
+  </ion-label>
+  </div>
+
+</ion-content>

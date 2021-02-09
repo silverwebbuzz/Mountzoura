@@ -1,0 +1,37 @@
+<ion-header class="appBar1">
+  <ion-toolbar class="bg">
+    <img src="../../../../assets/images/directional.png" slot ="start" class="img_tool_arrow" (click)=" back()"/>
+    <img src="../../../../assets/images/logoWithoutIcon.png" class="img_logo"/>
+    <img src="../../../../assets/images/gear.png" slot="end" class="img_tool_setting" (click)="settings()"/>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-label class="lbl_premium">
+    {{'single.title_stud_add' | translate}}
+  </ion-label>
+
+  <form [formGroup]="stud_add_form" autocomplete="off" class="form_all">
+
+  <ion-item lines="none" class="input-item add space">
+    <ion-input type="text" formControlName="studID" placeholder="{{'reusable.plac_stud_id' | translate}}" class="input-box">
+    </ion-input>
+  </ion-item>
+
+  <ion-item no-padding lines="none" class="validator-error error-spc"
+    *ngIf="stud_add_form.controls.studID.hasError('required') && stud_add_form.controls.studID.touched">
+    <p class="content add-error">{{'reusable.err_stud_id' | translate}}</p>
+  </ion-item>
+
+  </form>
+
+  <div class="div_img">
+    <img src="../../../../assets/images/signs.png" class="img_premium" (click)="submit()"/>
+  </div>
+
+  <ion-label class="lbl_premium">
+    {{'single.lbl_premium' | translate}}
+  </ion-label>
+
+</ion-content>

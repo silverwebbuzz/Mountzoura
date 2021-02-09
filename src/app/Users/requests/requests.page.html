@@ -1,0 +1,57 @@
+<ion-header class="appBar1">
+  <ion-toolbar class="bg">
+    <img src="../../../assets/images/directional.png" slot="start" class="img_tool_arrow" (click)="back()" />
+    <ion-title class="title_all">{{'settings.request' | translate}}</ion-title>
+    <img src="../../../assets/images/icon.png" slot="end" class="img_tool_logo" />
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="roll == '2'">
+
+  <div class="isEmpty1" *ngIf="resp_list?.length == 0 || resp_list == null">
+    <ion-label class="lbl-empty">{{'reusable.empty' | translate}}</ion-label>
+  </div>
+
+  <div *ngFor="let opt of resp_list | slice:0:limit;">
+    <ion-row class="row_list row_all" (click)="child(opt.id)">
+      <ion-col size="2" class="col_list col_all">
+        <img *ngIf="opt.gender == 'boy'" src="../../../assets/images/profile.png" class="img_main img_all" />
+        <img *ngIf="opt.gender == 'girl'" src="../../../assets/images/girl.png" class="img_main img_all" />
+      </ion-col>
+      <ion-col size="5" class="col_list col_">
+        <ion-label class="lbl_quiz_title lbl_title_all">{{opt.kidName}}</ion-label>
+        <ion-label class="lbl_unit lbl_desc_all">{{opt.gradeName}}</ion-label>
+        <ion-label class="lbl_unit lbl_desc_all">{{opt.teacherName}} {{opt.teacherSurname}}</ion-label>
+      </ion-col>
+        <ion-col size="5" class="auto right">
+          <ion-label class="lbl_red" *ngIf="opt.status == '1'">{{opt.connectStatus}}</ion-label>
+          <ion-label class="lbl_rejected" *ngIf="opt.status == '0'">{{opt.connectStatus}}</ion-label>
+      </ion-col>
+    </ion-row>
+  </div>
+
+</ion-content>
+
+<ion-content *ngIf="roll == '4'">
+  <div class="isEmpty1" *ngIf="teachresp_list?.length == 0 || teachresp_list == null">
+    <ion-label class="lbl-empty">{{'reusable.empty' | translate}}</ion-label>
+  </div>
+
+  <div *ngFor="let opt of teachresp_list | slice:0:limit;">
+    <ion-row class="row_list row_all">
+      <ion-col size="2" class="col_list col_all">
+        <img *ngIf="opt.gender == 'boy'" src="../../../assets/images/profile.png" class="img_all" />
+        <img *ngIf="opt.gender == 'girl'" src="../../../assets/images/girl.png" class="img_all" />
+      </ion-col>
+      <ion-col size="5" class="col_list col_ auto">
+        <ion-label class="lbl_quiz_title lbl_title_all">{{opt.kidName}}</ion-label>
+        <ion-label class="lbl_unit lbl_desc_all">{{opt.gradeName}}</ion-label>
+      </ion-col>
+      <ion-col size="5" class="auto right">
+        <ion-label class="lbl_red" *ngIf="opt.connectStatus == 'Στάλθηκε αίτημα'">{{opt.connectStatus}}</ion-label>
+        <ion-label class="lbl_rejected" *ngIf="opt.connectStatus == 'Απόρριψη αιτήματος'">{{opt.connectStatus}}</ion-label>
+      </ion-col>
+    </ion-row>
+  </div>
+
+</ion-content>

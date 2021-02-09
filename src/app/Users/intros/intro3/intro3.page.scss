@@ -1,0 +1,50 @@
+ion-content{
+    --padding-start: 16px;
+    --padding-end: 16px;
+    --padding-top: 16px;
+    --padding-bottom: 16px;
+
+    .div_logo{
+        text-align: center;
+        margin: 32px;
+        .img_logo{
+            width: 200px;
+        }
+    }
+
+    .lbl_{
+        font-size: 18px;
+        display: block;
+        text-align: center;
+        line-height: 1.3;
+        font-family: Comfortaa-SemiBold;
+    }
+
+    .div_teacher{
+        position: absolute;
+        bottom: 46px;
+        width: 100%;
+        left: 0;
+        right: 0;
+        text-align: center;
+    
+        .img_teacher{
+            height: 125px;
+        }
+    }
+}
+ion-footer{
+    position: fixed;
+    bottom: 0;
+    .btn_footer{
+        margin: 0px;
+        color: white;
+        text-transform: none;
+
+        .spn_indicator{
+            position: absolute;
+            right: 0;
+            font-size: 16px;
+          }
+    }
+}

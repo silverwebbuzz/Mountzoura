@@ -1,0 +1,107 @@
+<ion-header class="appBar1">
+  <ion-toolbar class="bg">
+    <img src="../../../assets/images/directional.png" slot="start" class="img_tool_arrow" (click)="back()"/>
+    <ion-title class="title_all">{{'settings.head' | translate}}</ion-title>
+    <img src="../../../assets/images/icon.png" slot="end" class="img_tool_logo"/>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-row class="row_list row_all" (click)="profile()">
+    <ion-col size="2" class="col_list col_all">
+      <ion-icon name="person-circle-outline"></ion-icon>
+    </ion-col>
+    <ion-col size="8" class="col_list auto_all spc">
+      <ion-label class="lbl_quiz_title lbl_title_all">{{'settings.profile' | translate}}</ion-label>
+    </ion-col>
+    <ion-col size="2" class="col_list col_all img_arrow_all">
+      <img src="../../../assets/images/multimedia-option.png" class="img_arrow" />
+    </ion-col>
+  </ion-row>
+
+  <ion-row class="row_list row_all" (click)="requests()">
+    <ion-col size="2" class="col_list col_all">
+      <ion-icon name="people-outline"></ion-icon>
+    </ion-col>
+    <ion-col size="8" class="col_list auto_all spc">
+      <ion-label class="lbl_quiz_title lbl_title_all">{{'settings.request' | translate}}</ion-label>
+    </ion-col>
+    <ion-col size="2" class="col_list col_all img_arrow_all">
+      <img src="../../../assets/images/multimedia-option.png" class="img_arrow" />
+    </ion-col>
+  </ion-row>
+
+  <ion-row class="row_list row_all" (click)="notify()">
+    <ion-col size="2" class="col_list col_all">
+      <ion-icon name="notifications-outline"></ion-icon>
+    </ion-col>
+    <ion-col size="8" class="col_list auto_all spc">
+      <ion-label class="lbl_quiz_title lbl_title_all">{{'settings.notify' | translate}}</ion-label>
+    </ion-col>
+    <ion-col size="2" class="col_list col_all img_arrow_all">
+      <img src="../../../assets/images/multimedia-option.png" class="img_arrow" />
+    </ion-col>
+  </ion-row>
+
+  <ion-row class="row_list row_all" (click)="policy()">
+    <ion-col size="2" class="col_list col_all">
+      <ion-icon name="document-text-outline"></ion-icon>
+    </ion-col>
+    <ion-col size="8" class="col_list auto_all spc">
+      <ion-label class="lbl_quiz_title lbl_title_all">{{'settings.privacy' | translate}}</ion-label>
+    </ion-col>
+    <ion-col size="2" class="col_list col_all img_arrow_all">
+      <img src="../../../assets/images/multimedia-option.png" class="img_arrow" />
+    </ion-col>
+  </ion-row>
+
+  <ion-row class="row_list row_all" (click)="gdpr()">
+    <ion-col size="2" class="col_list col_all">
+      <ion-icon name="newspaper-outline"></ion-icon>
+    </ion-col>
+    <ion-col size="8" class="col_list auto_all spc">
+      <ion-label class="lbl_quiz_title lbl_title_all">{{'settings.gdpr' | translate}}</ion-label>
+    </ion-col>
+    <ion-col size="2" class="col_list col_all img_arrow_all">
+      <img src="../../../assets/images/multimedia-option.png" class="img_arrow" />
+    </ion-col>
+  </ion-row>
+
+  <ion-row class="row_list row_all" (click)="terms()">
+    <ion-col size="2" class="col_list col_all">
+      <ion-icon name="reader-outline"></ion-icon>
+    </ion-col>
+    <ion-col size="8" class="col_list auto_all spc">
+      <ion-label class="lbl_quiz_title lbl_title_all">{{'settings.terms' | translate}}</ion-label>
+    </ion-col>
+    <ion-col size="2" class="col_list col_all img_arrow_all">
+      <img src="../../../assets/images/multimedia-option.png" class="img_arrow" />
+    </ion-col>
+  </ion-row>
+
+  <ion-row class="row_list row_all" (click)="share()">
+    <ion-col size="2" class="col_list col_all">
+      <ion-icon name="share-social-outline"></ion-icon>
+    </ion-col>
+    <ion-col size="8" class="col_list auto_all spc">
+      <ion-label class="lbl_quiz_title lbl_title_all">{{'settings.share' | translate}}</ion-label>
+    </ion-col>
+    <ion-col size="2" class="col_list col_all img_arrow_all">
+      <img src="../../../assets/images/multimedia-option.png" class="img_arrow" />
+    </ion-col>
+  </ion-row>
+
+  <ion-row class="row_list row_all" (click)="logout()">
+    <ion-col size="2" class="col_list col_all">
+      <ion-icon name="lock-closed-outline"></ion-icon>
+    </ion-col>
+    <ion-col size="8" class="col_list auto_all spc">
+      <ion-label class="lbl_quiz_title lbl_title_all">{{'settings.logout' | translate}}</ion-label>
+    </ion-col>
+    <ion-col size="2" class="col_list col_all img_arrow_all">
+      <img src="../../../assets/images/multimedia-option.png" class="img_arrow" />
+    </ion-col>
+  </ion-row>
+
+</ion-content>

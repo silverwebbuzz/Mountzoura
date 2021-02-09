@@ -1,0 +1,19 @@
+<ion-header class="appBar1">
+  <ion-toolbar class="bg">
+    <img src="../../../../assets/images/directional.png" slot ="start" class="img_tool_arrow" (click)="back()"/>
+    <img src="../../../../assets/images/logoWithoutIcon.png" class="img_logo"/>
+    <img src="../../../../assets/images/gear.png" slot="end" class="img_tool_setting" (click)="settings()"/>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-label class="lbl_premium">
+    {{'single.lbl_kid_add' | translate}}
+  </ion-label>
+
+  <div class="div_img">
+    <img src="../../../../assets/images/signs.png" class="img_premium" (click)="addKids()"/>
+  </div>
+
+</ion-content>

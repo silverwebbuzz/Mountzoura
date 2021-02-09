@@ -1,0 +1,14 @@
+.tab_bar{
+    --background: var(--ion-color-primary);
+    height: 56px;
+    
+    .tab_icons{
+        height: 22px;
+    }
+    .tab_lbl{
+        padding-top: 6px;
+        font-size: 10px;
+        font-weight: bold;
+        color: var(--ion-color-secondary-contrast);
+    }
+}

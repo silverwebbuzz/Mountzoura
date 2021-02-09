@@ -1,0 +1,68 @@
+<ion-header class="appBar1">
+  <ion-toolbar class="bg">
+    <img src="../../../../assets/images/directional.png" slot ="start" class="img_tool_arrow" (click)="back()"/>
+    <img src="../../../../assets/images/logoWithoutIcon.png" class="img_logo"/>
+    <img src="../../../assets/images/gear.png" slot="end" class="img_tool_setting" (click)="settings()"/>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+ 
+  <ion-row class="row_select">
+    
+    <ion-col size="5" class="col_select" [ngClass]="{'border':gender_value === 'boy' || gen==0 }" (click)="gender('boy')">
+      <img src="../../../../assets/images/profile.png" class="img_select"/>
+      <ion-label class="lbl_select">{{'single.lbl_boy' | translate }}</ion-label>
+    </ion-col>
+    <ion-col size="2" class="col_select lbl_or">
+      <ion-label class="lbl_select">{{'single.lbl_or' | translate }}</ion-label>
+    </ion-col>
+    <ion-col size="5" class="col_select" [ngClass]="{'border':gender_value === 'girl' }" (click)="gender('girl')">
+      <img src="../../../../assets/images/girl.png" class="img_select"/>
+      <ion-label class="lbl_select">{{'single.lbl_girl' | translate }}</ion-label>
+    </ion-col>
+  </ion-row>
+
+  <form [formGroup]="new_kid_form" autocomplete="off" class="form_all">
+   
+
+    <ion-item lines="none" class="input-item add space">
+      <ion-input type="text" formControlName="name" placeholder="{{'reusable.place_name' | translate }}" class="input-box">
+      </ion-input>
+    </ion-item>
+  
+    <ion-item no-padding lines="none" class="validator-error error-spc"
+        *ngIf="new_kid_form.controls.name.hasError('required') && new_kid_form.controls.name.touched">
+        <p class="content add-error">{{'reusable.err_name' | translate }}</p>
+      </ion-item>
+  
+    <ion-item lines="none" class="input-item space">
+      <ion-select interface="action-sheet" placeholder="{{'reusable.grade' | translate }}"  formControlName="grade"
+        class="btn-select bg dropWidth" mode="md" (ionChange)="gradeprize($event)">
+        <ion-select-option *ngFor="let opt of glist" [value]="opt.id">{{opt.title}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+  
+    <ion-item no-padding lines="none" class="validator-error error-spc"
+        *ngIf="new_kid_form.controls.grade.hasError('required') && new_kid_form.controls.grade.touched">
+        <p class="content add-error">{{'reusable.err_option' | translate }}</p>
+      </ion-item>
+  
+    </form>   
+
+  <ion-label class="lbl_">
+    {{'single.lbl_kid_new_access' | translate }}  </ion-label>
+
+  <ion-button class="btn_premium btn_all" expand="block" size="large" (click)="submit()">
+    <img src="../../../assets/images/premium.png" class="btn_img_premium"/>
+    {{prilist ? prilist : '0.0'}} €/{{'reusable.lbl_month' | translate }}
+  </ion-button>
+
+  <ion-label class="lbl_ lbl_no" (click)="free()">
+    {{'single.lbl_kid_new_no' | translate }}  </ion-label>
+
+    <div class="div_ads">
+      <img *ngIf="add" src="{{advertise_url}}{{add}}" (click)="ads()"class="img_ads"/>
+    </div>
+
+</ion-content>

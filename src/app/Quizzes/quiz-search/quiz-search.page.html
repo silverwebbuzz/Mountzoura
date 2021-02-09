@@ -1,0 +1,102 @@
+<ion-header class="appBar2">
+  <ion-toolbar class="bg">
+    <img src="../../../assets/images/icon.png" slot="start" class="img_tool_logo" />
+    <ion-searchbar id="searchValue" (ionChange)="searchBar($event.target.value)"
+      placeholder="{{'reusable.search' | translate}}" searchIcon="none" class="searchBox"></ion-searchbar>
+    <img src="../../../assets/images/gear.png" slot="end" class="img_tool_setting" (click)="settings()" />
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="isEmpty1"
+    *ngIf="(pdf?.length == 0 && quizedata?.length == 0  && video?.length == 0) || ((!t_contain || !k_contain) && quizedata?.length === 0)">
+    <ion-label class="lbl-empty">{{'reusable.empty' | translate}}</ion-label>
+  </div>
+  <div *ngIf="(!t_contain || !k_contain) && quizedata?.length >= 1">
+    <div *ngFor="let opt of quizedata | slice:0:limit;">
+      <ion-row class="row_list row_all" (click)="quiz_single(opt.id,opt.free_quiz)">
+        <ion-col size="2" class="col_list col_all">
+          <!-- <img src="../../../assets/images/paper.png" class="img_main"/> -->
+          <img *ngIf="!opt.image" src="{{user_not_found_place_holder}}" class="img_main img_all" />
+          <img *ngIf="opt.image" src="{{imageUrl}}{{opt.image}}" class="img_main img_all" />
+        </ion-col>
+        <ion-col size="6" class="col_list auto_all">
+          <ion-label class="lbl_quiz_title lbl_title_all">{{opt.title}}</ion-label>
+          <ion-label class="lbl_unit lbl_desc_all">{{opt.lessionTitle}} - {{opt.unitTitle}}</ion-label>
+        </ion-col>
+        <ion-col size="2" class="col_list col_all img_premium_all">
+          <img src="../../../assets/images/premium.png" *ngIf='opt.free_quiz == 0' class="img_premium" />
+        </ion-col>
+        <ion-col size="2" class="col_list col_all img_arrow_all">
+          <img src="../../../assets/images/multimedia-option.png" class="img_arrow" />
+        </ion-col>
+      </ion-row>
+    </div>
+  </div>
+
+  <div *ngIf="t_contain || k_contain">
+    <!-- <div *ngFor="let art of article | slice:0:limit;">
+      <ion-row class="row_list row_all" (click)="quiz_single(opt.id,opt.free_quiz)">
+        <ion-col size="2" class="col_list col_all">
+          <img *ngIf="!art.image" src="{{user_not_found_place_holder}}" class="img_main img_all" />
+          <img *ngIf="art.image" src="{{article_url}}{{art.image}}" class="img_main img_all" />
+        </ion-col>
+        <ion-col size="6" class="col_list auto_all">
+          <ion-label class="lbl_quiz_title lbl_title_all">{{art.title}}</ion-label>
+          <ion-label class="lbl_unit lbl_desc_all">{{art.lessionTitle}} - {{art.unitTitle}}</ion-label>
+        </ion-col>
+        <ion-col size="2" class="col_list col_all img_premium_all">
+          <img src="../../../assets/images/premium.png" *ngIf='art.free_quiz == 0' class="img_premium" />
+        </ion-col>
+        <ion-col size="2" class="col_list col_all img_arrow_all">
+          <img src="../../../assets/images/multimedia-option.png" class="img_arrow" />
+        </ion-col>
+      </ion-row>
+    </div> -->
+
+    <ng-container *ngFor="let pdf of pdf | slice:0:limit;">
+      <ion-row class="row_list row_all" (click)="quiz_pdf(pdf.id,pdf.free_pdf)">
+        <ion-col size="2" class="col_list col_all">
+          <img src="../../../assets/images/paper.png" class="img_main" />
+          <!-- <img *ngIf="!pdf.image" src="{{user_not_found_place_holder}}" class="img_main img_all" />
+          <img *ngIf="pdf.image" src="{{imageUrl}}{{pdf.image}}" class="img_main img_all" /> -->
+        </ion-col>
+        <ion-col size="6" class="col_list auto_all">
+          <ion-label class="lbl_quiz_title lbl_title_all">{{pdf.title}}</ion-label>
+          <ion-label class="lbl_unit lbl_desc_all">{{pdf.lessionTitle}} - {{pdf.unitTitle}}</ion-label>
+        </ion-col>
+        <ion-col size="2" class="col_list col_all img_premium_all">
+          <img src="../../../assets/images/premium.png" *ngIf='pdf.free_pdf == 0' class="img_premium" />
+        </ion-col>
+        <ion-col size="2" class="col_list col_all img_arrow_all">
+          <img src="../../../assets/images/multimedia-option.png" class="img_arrow" />
+        </ion-col>
+      </ion-row>
+    </ng-container>
+
+    <div *ngFor="let vid of video | slice:0:limit;">
+      <ion-row class="row_list row_all" (click)="quiz_video(vid.id,vid.free_video)">
+        <ion-col size="2" class="col_list col_all">
+          <img src="../../../assets/images/video.png" class="img_main img_all" />
+        </ion-col>
+        <ion-col size="6" class="col_list auto_all">
+          <ion-label class="lbl_quiz_title lbl_title_all">{{vid.title}}</ion-label>
+        </ion-col>
+        <ion-col size="2" class="col_list col_all img_premium_all">
+          <img src="../../../assets/images/premium.png" *ngIf='vid.free_video == 0' class="img_premium" />
+        </ion-col>
+        <ion-col size="2" class="col_list col_all img_arrow_all">
+          <img src="../../../assets/images/multimedia-option.png" class="img_arrow" />
+        </ion-col>
+      </ion-row>
+    </div>
+  </div>
+  <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Παρακαλώ περιμένετε...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+  <div class="div_ads_empty">
+    <img *ngIf="add" src="{{advertise_url}}{{add}}" (click)="ads()" class="img_ads_empty spc_ads" />
+  </div>
+</ion-content>

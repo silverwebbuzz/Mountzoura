@@ -1,0 +1,98 @@
+<ion-label class="lbl_lang" *ngIf="lan == 0" >
+  {{'intro1.select' | translate }}
+  <select #langSelect (change)="lanservice.changeLanguage(langSelect.value)" class="option">
+    <option *ngFor="let lang of translate.getLangs()" [value]="lang" [selected]="lang === translate.currentLang">
+      {{ lang }}</option>
+  </select>
+</ion-label>
+
+<ion-content>
+
+  <div class="div_logo">
+    <img src="../../assets/images/logoWithUpIcon.png" class="img_logo" />
+  </div>
+
+  <form [formGroup]="login_form" autocomplete="off" class="login_form">
+
+    <ion-item lines="none" class="input-item add space">
+      <ion-input type="email" formControlName="email" placeholder="{{'login.place_email' | translate }}"
+        class="input-box">
+      </ion-input>
+    </ion-item>
+
+    <ion-item no-padding lines="none" class="validator-error error-spc"
+      *ngIf="login_form.controls.email.hasError('required') && login_form.controls.email.touched">
+      <p class="content add-error">{{'login.err_email' | translate }}</p>
+    </ion-item>
+
+    <ion-item no-padding lines="none" class="validator-error"
+      *ngIf="login_form.controls.email.hasError('pattern') && login_form.controls.email.touched">
+      <p class="content">{{'register.email_valid' | translate}}</p>
+    </ion-item>
+
+    <ion-item lines="none" class="input-item add">
+      <ion-input type="password" formControlName="password" placeholder="{{'login.place_pass' | translate }}"
+        class="input-box"></ion-input>
+    </ion-item>
+
+    <ion-item no-padding lines="none" class="validator-error error-spc"
+      *ngIf="login_form.controls.password.hasError('required') && login_form.controls.password.touched">
+      <p class="content add-error">{{'login.err_pass' | translate }}</p>
+    </ion-item>
+
+    <ion-item no-padding lines="none" class="validator-error error-spc"
+      *ngIf="login_form.controls.password.hasError('incorrect') && login_form.controls.password.touched">
+      <p class="content add-error">{{'login.err_in_pass' | translate }}</p>
+    </ion-item>
+
+  </form>
+
+  <ion-button expand="block" size="large" class="btn_footer btn_login" (click)="login()">{{'login.login' | translate }}
+  </ion-button>
+
+  <!-- <div class="div_main_or">
+    <div class="div_or">
+      <span>
+        {{'login.or' | translate }}
+      </span>
+    </div>
+  </div> -->
+
+  <!-- <div class="div_social_btn">
+    <ion-row class="row_fb">
+      <ion-col size="2" class="col_fb">
+        <img src="../../assets/images/fb.png" class="img_fb" />
+      </ion-col>
+      <ion-col size="10" class="col_fb">
+        <ion-label class="lbl_fb" (click)="loginWithFB()">{{'login.facebook' | translate }}</ion-label>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="row_google">
+      <ion-col size="2" class="col_google">
+        <img src="../../assets/images/google.png" class="img_google" />
+      </ion-col>
+      <ion-col size="10" class="col_google">
+        <ion-label class="lbl_google" (click)="loginUser()">{{'login.google' | translate }}</ion-label>
+      </ion-col>
+    </ion-row>
+  </div> -->
+
+  <ion-label class="lbl_forgot" (click)="forgot()">{{'login.forgot_pass' | translate }}</ion-label>
+
+
+  <div class="div_empty"></div>
+
+  <!-- <div class="footer_img">
+    <img src="../../assets/images/profile.png" class="img_profile_footer">
+  </div> -->
+  <div class="boy_img" *ngIf="isKeyboardHide"> 
+    <img src="../../assets/images/profile.png" class="img_boy">
+  </div>
+  
+</ion-content>
+
+<ion-footer>
+  <ion-button expand="full" size="large" class="btn_footer" (click)="register()">{{'login.new_account' | translate }}
+  </ion-button>
+</ion-footer>

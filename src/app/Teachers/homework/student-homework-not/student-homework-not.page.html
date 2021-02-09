@@ -1,0 +1,26 @@
+<ion-header class="appBar1">
+  <ion-toolbar class="bg">
+    <img src="../../../../assets/images/directional.png" slot="start" class="img_tool_arrow" (click)="back()" />
+    <ion-title class="title_all">{{'reusable.results' | translate}}</ion-title>
+    <img src="../../../../assets/images/gear.png" slot="end" class="img_tool_setting" (click)="settings()" />
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-label class="lbl_">
+    {{'single.kid_rest' | translate}}
+  </ion-label>
+
+  <div class="div_img">
+    <img src="../../../../assets/images/time.png" class="img_" />
+  </div>
+
+  <!-- <ion-button size="large" expand="block" class="btn_dlt" (click)="delete()">Delete from H/W</ion-button> -->
+
+</ion-content>
+
+<ion-footer>
+  <ion-button size="large" expand="block" class="btn_dlt btn_all" (click)="delete()">{{'reusable.dlt' | translate}}
+  </ion-button>
+</ion-footer>

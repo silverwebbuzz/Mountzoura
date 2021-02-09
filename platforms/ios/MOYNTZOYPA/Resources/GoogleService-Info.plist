@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>492204006086-undvq8a2o7lo2t8d8s5v6m2c15fbj344.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.492204006086-undvq8a2o7lo2t8d8s5v6m2c15fbj344</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCD03YJ8G7tNeqgzP1xoKpJdwFjsosZ73M</string>
+	<key>GCM_SENDER_ID</key>
+	<string>492204006086</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.com.mountozoura</string>
+	<key>PROJECT_ID</key>
+	<string>mountozoura-b2c8e</string>
+	<key>STORAGE_BUCKET</key>
+	<string>mountozoura-b2c8e.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:492204006086:ios:2ea10222274158472c55c7</string>
+	<key>DATABASE_URL</key>
+	<string>https://mountozoura-b2c8e.firebaseio.com</string>
+</dict>
+</plist>

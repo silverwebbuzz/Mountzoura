@@ -1,0 +1,30 @@
+.bg{
+    --background: #fdf8f1;
+    .img_tool{
+        height: 32px;
+    }
+}
+// .header-ios ion-toolbar:last-of-type {
+//     --border-width: 0 0 0.55px !important;
+//     --border-color: var(--ion-color-primary);
+//   }
+ion-content{
+    .div_img{
+        text-align: center;
+        padding: 16px;
+        .img_casino{
+            height: 150px;
+        }
+    }
+    .lbl_title{
+        display: block;
+        text-align: center;
+        padding: 16px;
+    }
+    .btn_play{
+        color: white;
+    }
+    .btn_set{
+        color: white;
+    }
+}

@@ -1,0 +1,54 @@
+<ion-header class="appBar1">
+  <ion-toolbar class="bg">
+    <img src="../../../../assets/images/directional.png" slot ="start" class="img_tool_arrow" (click)="back()"/>
+    <img src="../../../../assets/images/logoWithoutIcon.png" class="img_logo"/>
+    <img src="../../../../assets/images/gear.png" slot="end" class="img_tool_setting" (click)="settings()"/>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+  <!-- <div class="isEmpty" *ngIf="listdata?.length == 0 || listdata == null">
+    <ion-label class="lbl-empty">{{'reusable.empty' | translate}}</ion-label>
+  </div> -->
+  
+<ng-container *ngFor="let opt of listdata | slice:0:limit;">
+  <ion-row class="row_list row_all" (click)="premium(opt.id,opt.package_staus)">
+    <ion-col size="2" class="col_list col_all">
+      <!-- <img src="../../../../assets/images/profile.png" class="img_main"/> -->
+      <img *ngIf="opt.gender == 'boy'" src="../../../../assets/images/profile.png" class="img_main img_all" />
+          <img *ngIf="opt.gender == 'girl'" src="../../../../assets/images/girl.png" class="img_main img_all" />
+    </ion-col>
+    <ion-col size="6" class="col_list auto_all">
+      <ion-label class="lbl_quiz_title lbl_title_all">{{opt.name}} #{{opt.kid_id}}</ion-label>
+      <ion-label class="lbl_unit lbl_desc_all">{{opt.gradeName}}</ion-label>
+    </ion-col>
+    <ion-col size="2" class="col_list col_all img_premium_all">
+      <img src="../../../assets/images/premium.png" *ngIf="opt.package_staus == 1" class="img_premium"/>
+    </ion-col>
+    <ion-col size="2" class="col_list col_all img_arrow_all">
+      <img src="../../../assets/images/multimedia-option.png" class="img_arrow"/>
+    </ion-col>
+  </ion-row>
+</ng-container>
+
+<ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+  <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Παρακαλώ περιμένετε...">
+  </ion-infinite-scroll-content>
+</ion-infinite-scroll>
+
+<!-- <div class="isEmpty1"> -->
+  <ion-label class="lbl_premium">
+    {{'single.lbl_kid_added' | translate }}
+  </ion-label>
+
+  <div *ngIf="listdata?.length == 0" class="div_img isEmpty1">
+    <img src="../../../../assets/images/signs.png" class="img_premium" (click)="addKids()"/>
+  </div>
+
+  <div class="div_img ">
+    <img src="../../../../assets/images/signs.png" class="img_premium" (click)="addKids()"/>
+  </div>
+  <!-- </div> -->      
+  
+</ion-content>

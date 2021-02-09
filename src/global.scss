@@ -1,0 +1,526 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import "~@ionic/angular/css/display.css";
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+@font-face {
+  font-family: "Comfortaa-Bold";
+  font-style: normal;
+  src: url("src/assets/fonts/Comfortaa-Bold.ttf");
+}
+
+@font-face {
+  font-family: "Comfortaa-SemiBold";
+  font-style: normal;
+  src: url("src/assets/fonts/Comfortaa-SemiBold.ttf");
+}
+
+@font-face {
+  font-family: "Comfortaa-Medium";
+  font-style: normal;
+  src: url("src/assets/fonts/Comfortaa-Medium.ttf");
+}
+
+@font-face {
+  font-family: "Comfortaa-Regular";
+  font-style: normal;
+  src: url("src/assets/fonts/Comfortaa-Regular.ttf");
+}
+
+.header-ios ion-toolbar:last-of-type {
+  --border-width: 0 0 0px;
+  --min-height: 48px;
+}
+.searchbar-input.sc-ion-searchbar-ios {
+  padding-inline-start: 20px !important;
+  padding-inline-end: 20px !important;
+  text-align: center;
+}
+ion-header ion-toolbar:first-of-type {
+  --min-height: 48px;
+}
+.searchbar-input.sc-ion-searchbar-md {
+  padding-inline-start: 20px !important;
+  padding-inline-end: 20px !important;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  text-align: center;
+  font-size: 17px;
+  box-shadow: 0px 0px;
+  border-radius: 10px;
+}
+.header-md::after {
+  bottom: 0px !important;
+}
+.searchbar-clear-button.sc-ion-searchbar-md {
+  right: 5px;
+}
+.footer-md::before {
+  height: 0px;
+}
+p {
+  font-size: 18px !important;
+}
+.appBar1 {
+  border-bottom: 0.55px solid var(--ion-color-primary);
+
+  .bg {
+    text-align: center;
+    --background: #fdf8f1;
+    --padding-top: 0px;
+    --padding-bottom: 0px;
+    --padding-start: 0px;
+    --padding-end: 0px;
+
+    .img_tool_logo {
+      height: 32px;
+      padding-right: 8px;
+    }
+
+    .img_tool_arrow {
+      height: 32px;
+      padding-left: 8px;
+    }
+    .img_logo {
+      width: 80%;
+    }
+    .img_tool_setting {
+      height: 32px;
+      padding-right: 8px;
+    }
+    .title_all {
+      font-weight: bold;
+    }
+  }
+}
+
+.appBar2 {
+  border-bottom: 0.55px solid var(--ion-color-primary);
+  .bg {
+    --background: #fdf8f1;
+    --padding-top: 0px;
+    --padding-bottom: 0px;
+    --padding-start: 0px;
+    --padding-end: 0px;
+
+    .img_tool_logo {
+      height: 32px;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      padding-left: 8px;
+    }
+    .searchBox {
+      --background: #fdf8f1;
+      border: 1px solid var(--ion-color-primary);
+      height: 34px;
+      width: 70% !important;
+      margin: 0 auto;
+      padding-top: 0px;
+      padding-bottom: 0px;
+      padding-inline-start: 0px;
+      padding-inline-end: 0px;
+      border-radius: 10px;
+    }
+    .img_tool_setting {
+      height: 32px;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      padding-right: 8px;
+    }
+  }
+}
+
+.dropWidth {
+  min-width: 100%;
+  text-align: center;
+  font-size: 22px;
+}
+ion-select::part(icon) {
+  display: none;
+}
+.btn_all {
+  width: 88% !important;
+  margin: 0 auto !important;
+  color: white;
+  text-transform: none;
+  --border-radius: 10px;
+}
+.form_all {
+  margin-bottom: 14px;
+}
+.lbl_all {
+  background: #fdf8f1;
+  text-align: center;
+  margin: 16px 0px;
+  padding: 14px !important;
+  font-size: 16px;
+}
+.row_all {
+  padding: 8px 8px 8px 16px;
+  border-bottom: 0.5px dotted var(--ion-color-primary);
+  .col_all {
+    padding: 0px;
+  }
+  .img_all {
+    height: 44px !important;
+  }
+  .lbl_title_all {
+    font-size: 18px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .lbl_desc_all {
+    font-size: 14px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .img_arrow_all {
+    text-align: right;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+  .img_premium_all {
+    text-align: right;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+  .img_none_all {
+    display: none;
+  }
+  .auto_all {
+    margin-top: auto;
+    margin-bottom: auto;
+    padding: 0px 0px 0px 16px !important;
+  }
+}
+.isEmpty {
+  padding: 16px;
+  text-align: center;
+}
+.isEmpty1 {
+  margin: 48px 0px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+.div_all {
+  margin: 16px 8px;
+
+  .div_lbl {
+    width: 90%;
+    padding: 16px;
+    background: #dbdbdb;
+    margin: 0 auto;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    .chk_lbl {
+      position: absolute;
+      left: 48px;
+    }
+    .lbl {
+      display: block;
+      text-align: left;
+      margin-left: 48px;
+      font-size: 16px;
+    }
+  }
+}
+.div_all_img {
+  margin: 16px 8px;
+  display: inline-block;
+  width: 45%;
+
+  .div_imgs {
+    // display: inline-block;
+    // float: left;
+    padding: 16px;
+    // margin: 8px;
+    --padding-start: 0px;
+    --inner-padding-end: 0px;
+    height: 200px;
+    width: 100%;
+    position: relative;
+    background: #dbdbdb;
+    // border: 1px dotted var(--ion-color-primary);
+    .chk_img {
+      position: absolute;
+      bottom: 8px;
+      left: 8px;
+      margin: 0px;
+      --checkmark-color: #fff;
+    }
+    .img_alls {
+      height: 120px;
+      width: 100%;
+      // background: grey;
+    }
+  }
+}
+// Field Error
+.validator-error {
+  --background: transparent;
+  color: #d44848;
+  --min-height: 18px;
+
+  .content {
+    margin-bottom: 0px;
+    margin-top: 0px;
+    font-size: 12px;
+  }
+}
+
+.err_pay{
+  color: #d44848;
+  font-weight: bold;
+}
+
+.input-item {
+  width: 88%;
+  margin: 0 auto !important;
+  --inner-padding-end: 0px;
+  --padding-start: 0px;
+  padding: 2px 8px 2px 8px;
+  margin: 0px;
+  border-radius: 10px;
+  margin-top: 14px !important;
+  border: 1px solid var(--ion-color-primary);
+
+  ion-icon {
+    color: var(--ion-color-medium);
+    font-size: 24px;
+  }
+
+  .input-box {
+    margin-left: 8px;
+    font-size: 22px;
+    text-align: center;
+    // --placeholder-color: #000;
+  }
+}
+
+.footer_img img {
+  height: auto !important;
+}
+.footer_img {
+  position: absolute;
+    bottom: 52px !important;
+    height: auto !important;
+}
+
+@media (max-height: 800px){
+  .footer_img {
+    bottom: 51px !important;
+  }
+}
+@media (min-height: 800px){
+  .footer_img {
+    bottom: 51px !important;
+  }
+}
+@media (max-width: 325px) and (min-width: 320px){
+  .footer_img {
+    bottom: -120px !important;
+    height: 72px !important;
+  }
+}
+
+@media (min-height: 800px) {
+  .boy_img{
+    position: absolute;
+    bottom: 52px;
+    width: 100px !important;
+    height: auto !important;
+    // z-index: 999;
+    .img_boy{
+      height: 100px;
+    }
+    .img_size{
+      width: 175px !important;
+    }
+  }
+}
+@media (max-height: 800px) {
+  .boy_img{
+    position: absolute;
+    bottom: 52px;
+    width: 100px !important;
+    height: auto !important;
+    .img_boy{
+      height: 100px;
+    }
+    .img_size{
+      width: 175px !important;
+    }
+  }
+}
+@media (min-height: 850px) {
+  .dhingla_img{
+    position: absolute;
+    bottom: 56px;
+    width: 100%;
+    height: 150px !important;
+    text-align: center;
+    // z-index: 999;
+    .img_dhingla{
+      height: 150px !important;
+      // width: 150px !important;
+    }
+  }
+}
+@media (max-height: 850px) {
+  .dhingla_img{
+    margin-bottom: 34px;
+    text-align: center;
+    .img_dhingla{
+      height: 150px !important;
+      // width: 150px !important;
+    }
+  }
+}
+// @media (min-height: 800px) {
+//   .footer_img{
+//     position: absolute;
+//     bottom: 52px;
+//     width: 100px !important;
+//     height: auto !important;
+//     // z-index: 999;
+//     .img_teacher{
+//       // height: 100px;
+//       width: 175px !important;
+//       margin: 0 auto;
+//       left: 0;
+//       right: 0;
+//     }
+//     .img_footer{
+//       height: 150px !important;
+//       width: 150px !important;
+//       margin: 0 auto;
+//       left: 0;
+//       right: 0;
+//     }
+//   }
+// }
+// @media (max-height: 800px) {
+//   .footer_img{
+//     margin-bottom: 34px;
+//     .img_teacher{
+//       // height: 100px;
+//       width: 175px !important;
+//       margin: 0 auto;
+//       left: 0;
+//       right: 0;
+//     }
+//     .img_footer{
+//       height: 150px !important;
+//       width: 150px !important;
+//       margin: 0 auto;
+//       left: 0;
+//       right: 0;
+//     }
+//   }
+// }
+// .div_ads_footer{
+//   text-align: center;
+//   .img_ads_footer{
+//     width: 300px;
+//     height: 150px;
+//   }
+// }
+.spc_ads{
+  padding: 0px 8px;
+}
+@media (min-height: 600px) {
+  .div_ads{
+    height: 175px;
+    position: relative;
+    .img_ads{
+      width: 100%;
+      height: 150px;
+      // object-fit: cover;
+      position: absolute;
+      bottom: -48px;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+    }
+  }
+}
+@media (max-height: 601px) {
+  .div_ads{
+    position: relative;
+    height: 175px;
+    .img_ads{
+      width: 100%;
+      height: 150px;
+      // object-fit: cover;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+    }
+  }
+}
+.div_ads_empty{
+  // position: absolute;
+  height: 175px;
+  // bottom: 0;
+  .img_ads_empty{
+    width: 100%;
+    height: 150px;
+  }
+}
+@media (min-width: 375px) and (max-width: 376px) {
+  ion-content .div_empty {
+    height: 105px !important;
+  }
+  ion-content .div_empty1 {
+    height: 200px !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .footer_img img {
+    bottom: -246px !important;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .footer_img img {
+    bottom: -420% !important;
+  }
+}
+
+
+
+
+

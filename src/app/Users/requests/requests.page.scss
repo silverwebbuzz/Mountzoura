@@ -1,0 +1,65 @@
+.row_list{
+    .col_list{
+        .img_main{
+            height: 44px !important;
+        }
+        .lbl_quiz_title{
+            display: block;
+        }
+        .lbl_unit{
+            display: block;
+        }
+        .img_premium{
+            height: 34px;
+            width: 34px;
+        }
+        .img_arrow{
+            height: 28px;
+            width: 28px;
+        }
+    }
+}
+.col_{
+    padding: 0px 0px 0px 8px !important;
+}
+.btn_row{
+    .btn_col{
+        padding-left: 0px;
+        padding-bottom: 0px;
+        .btns_{
+            margin-left: 0px;
+            margin-bottom: 0px;
+            text-transform: none;
+            color: white;
+        }
+    }
+}
+
+.lbl_red{
+    display: block;
+    padding: 8px 8px 8px 8px;
+    color: white;
+    background: var(--ion-color-primary);
+    width: 105px;
+    font-weight: bold;
+    text-align: left;
+    font-size: 14px;
+}
+.lbl_rejected{
+    display: block;
+    padding: 8px 8px 8px 8px;
+    color: white;
+    background: red;
+    width: 105px;
+    font-weight: bold;
+    text-align: left;
+    font-size: 14px;
+}
+
+.auto{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.right{
+    text-align: -webkit-right;
+}

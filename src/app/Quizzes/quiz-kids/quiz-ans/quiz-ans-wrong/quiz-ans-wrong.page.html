@@ -1,0 +1,38 @@
+<ion-content>
+
+  <ion-label class="lbl_title">{{'single.lbl_error' | translate}}</ion-label>
+
+  <div class="div_img" *ngIf="question">
+    <span class="lbl_answer"> {{question}}</span>
+  </div>
+
+<div class="div_img" *ngIf="que_image != 'null'">
+  <img *ngIf="que_image != 'null'" src="{{imageUrl}}{{que_image}}" class="img_quiz" />
+</div>
+  
+
+  <ion-label class="lbl_ans">
+    <span class="lbl_head">{{'reusable.lbl_ans_your' | translate}}</span><br><br>
+    <span class="lbl_answer">{{ans}}</span>
+    <img *ngIf='ans_img' src="{{imageUrl}}{{ans_img}}" class="img_quiz" />
+  </ion-label>
+
+  <ion-label class="lbl_ans">
+    <span class="lbl_head">{{'single.lbl_ans_right' | translate}}</span><br><br>
+    <span class="lbl_answer"> {{c_ans}}</span>
+    <img *ngIf='c_img' src="{{imageUrl}}{{c_img}}" class="img_quiz" />
+  </ion-label>
+
+  <ion-button class="btn_nxt" size="large" fill="clear" expand="block" (click)="next()">{{'next' | translate}}</ion-button>
+
+  <div class="div_ads">
+    <img *ngIf="add" src="{{advertise_url}}{{add}}" (click)="ads()" class="img_ads"/>
+  </div>
+
+</ion-content>
+
+<ion-footer>
+
+  <ion-label class="lbl_indicator">{{len_val ? len_val : 1}}/{{totalq}}</ion-label>
+
+</ion-footer>

@@ -1,0 +1,184 @@
+<ion-header class="appBar1">
+  <ion-toolbar class="bg">
+    <img src="../../../assets/images/directional.png" slot ="start" class="img_tool_arrow" (click)="back()"/>
+    <img src="../../../assets/images/logoWithoutIcon.png" class="img_logo"/>
+    <img src="../../../assets/images/gear.png" slot="end" class="img_tool_setting" (click)="settings()"/>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-label class="lbl_head_title">
+    {{'single.lbl_home_head' | translate}}
+  </ion-label>
+
+  <form [formGroup]="home_form" autocomplete="off" class="form_all">
+
+    <ion-item lines="none" class="input-item space">
+      <ion-select interface="action-sheet" placeholder="{{'reusable.grade' | translate}}"  formControlName="grade"
+        class="btn-select bg dropWidth" mode="md" (ionChange)="lessionList($event)">
+        <ion-select-option *ngFor="let opt of glist" [value]="opt.id">{{opt.title}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+  
+    <ion-item no-padding lines="none" class="validator-error error-spc"
+        *ngIf="home_form.controls.grade.hasError('required') && home_form.controls.grade.touched">
+        <p class="content add-error">{{'reusable.err_option' | translate}}</p>
+      </ion-item>
+
+      <ion-item lines="none" class="input-item space">
+        <ion-select interface="action-sheet" placeholder="{{'reusable.lesson' | translate}}"  formControlName="lesson"
+          class="btn-select bg dropWidth" mode="md" (ionChange)="onChangePropertyType($event)">
+         <div *ngIf="course_id">
+          <ion-select-option *ngFor="let opt of llist" [value]="opt.id">{{opt.name}}</ion-select-option>
+        </div>
+        <!-- <ion-select-option *ngIf="!course_id"></ion-select-option> -->
+
+        </ion-select>
+      </ion-item>
+
+  <ion-item no-padding lines="none" class="validator-error error-spc"
+      *ngIf="home_form.controls.lesson.hasError('required') && home_form.controls.lesson.touched">
+      <p class="content add-error">{{'reusable.err_option' | translate}}</p>
+    </ion-item>
+
+    <ion-item lines="none" class="input-item space">
+      <ion-select interface="action-sheet" placeholder="{{'reusable.course' | translate}}" formControlName="course"
+        class="btn-select bg dropWidth" mode="md">
+        <div *ngIf="lass_id">
+        <ion-select-option *ngFor="let opt of clist" [value]="opt.id">{{opt.title}}</ion-select-option>
+      </div>
+        <!-- <ion-select-option *ngIf="!lass_id"></ion-select-option> -->
+      </ion-select>
+    </ion-item>
+
+  <ion-item no-padding lines="none" class="validator-error error-spc"
+      *ngIf="home_form.controls.course.hasError('required') && home_form.controls.course.touched">
+      <p class="content add-error">{{'reusable.err_option' | translate}}</p>
+    </ion-item>
+
+  </form>
+
+  <ion-button expand="block" size="large" (click)="submit()" class="btn_all">{{'reusable.btn_search' | translate}}</ion-button>
+
+  <ion-label class="lbl_latest lbl_all">
+    {{'reusable.lbl_recent' | translate}}
+  </ion-label>
+
+  <div class="isEmpty" *ngIf="quizedata?.length == 0 && pdf?.length == 0 && video?.length == 0">
+    <ion-label class="lbl-empty">{{'reusable.empty' | translate}}</ion-label>
+  </div>
+
+<ng-container *ngFor="let opt of quizedata | slice:0:limit;">
+  <ion-row class="row_list row_all" (click)="quiz_single(opt.id,opt.free_quiz)">
+    <ion-col size="2" class="col_list col_all">
+      <img *ngIf="!opt.image" src="{{user_not_found_place_holder}}" class="img_main img_all" />
+          <img *ngIf="opt.image" src="{{imageUrl}}{{opt.image}}" class="img_main img_all" />
+    </ion-col>
+    <ion-col size="6" class="col_list auto_all">
+      <ion-label class="lbl_quiz_title lbl_title_all">{{opt.title}}</ion-label>
+      <ion-label class="lbl_unit lbl_desc_all">{{opt.lessionTitle}} - {{opt.unitTitle}}</ion-label>
+    </ion-col>
+    <ion-col size="2" class="col_list col_all img_premium_all">
+      <img src="../../../assets/images/premium.png" *ngIf='opt.free_quiz == 0' class="img_premium"/>
+    </ion-col>
+    <ion-col size="2" class="col_list col_all img_arrow_all">
+      <img src="../../../assets/images/multimedia-option.png" class="img_arrow"/>
+    </ion-col>
+  </ion-row>
+</ng-container>
+
+<!-- <ng-container  *ngFor="let art of article | slice:0:limit">
+  <ion-row class="row_list row_all">
+    <ion-col size="2" class="col_list col_all">
+      <img *ngIf="!art.image" src="{{user_not_found_place_holder}}" class="img_main img_all" />
+        <img *ngIf="art.image" src="{{article_url}}{{art.image}}" class="img_main img_all" />
+    </ion-col>
+    <ion-col size="6" class="col_list">
+      <ion-label class="lbl_quiz_title lbl_title_all">{{art.title}}</ion-label>
+      <ion-label class="lbl_unit lbl_desc_all">{{art.lessionTitle}} - {{art.unitTitle}}</ion-label>
+    </ion-col>
+    <ion-col size="2" class="col_list col_all img_premium_all">
+      <img src="../../../assets/images/premium.png" *ngIf='art.free_quiz == 0' class="img_premium"/>
+    </ion-col>
+    <ion-col size="2" class="col_list col_all img_arrow_all">
+      <img src="../../../assets/images/multimedia-option.png" class="img_arrow"/>
+    </ion-col>
+  </ion-row>
+</ng-container> -->
+
+<ng-container  *ngFor="let pdf of pdf | slice:0:limit;">
+  <ion-row class="row_list row_all" (click)="quiz_pdf(pdf.id,pdf.free_pdf)">
+    <ion-col size="2" class="col_list col_all">
+      <img src="../../../assets/images/paper.png" class="img_main"/>
+    </ion-col>
+    <ion-col size="6" class="col_list auto_all">
+      <ion-label class="lbl_quiz_title lbl_title_all">{{pdf.title}}</ion-label>
+      <ion-label class="lbl_unit lbl_desc_all">{{pdf.lessionTitle}} - {{pdf.unitTitle}}</ion-label>
+    </ion-col>
+    <ion-col size="2" class="col_list col_all img_premium_all">
+      <img src="../../../assets/images/premium.png" *ngIf='pdf.free_pdf == 0' class="img_premium"/>
+    </ion-col>
+    <ion-col size="2" class="col_list col_all img_arrow_all">
+      <img src="../../../assets/images/multimedia-option.png" class="img_arrow"/>
+    </ion-col>
+  </ion-row>
+</ng-container>
+
+<ng-container  *ngFor="let vid of video | slice:0:limit">
+  <ion-row class="row_list row_all" (click)="quiz_video(vid.id,vid.free_video)">
+    <ion-col size="2" class="col_list col_all">
+      <img src="../../../assets/images/video.png" class="img_main"/>
+    </ion-col>
+    <ion-col size="6" class="col_list auto_all">
+      <ion-label class="lbl_quiz_title lbl_title_all">{{vid.title}}</ion-label>
+      
+    </ion-col>
+    <ion-col size="2" class="col_list col_all img_premium_all">
+      <img src="../../../assets/images/premium.png" *ngIf='vid.free_video == 0' class="img_premium"/>
+    </ion-col>
+    <ion-col size="2" class="col_list col_all img_arrow_all">
+      <img src="../../../assets/images/multimedia-option.png" class="img_arrow"/>
+    </ion-col>
+  </ion-row>
+</ng-container>
+
+<ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+  <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Παρακαλώ περιμένετε...">
+  </ion-infinite-scroll-content>
+</ion-infinite-scroll>
+
+<div *ngIf="package_status == 0 && connect_student < 6">
+  <ion-label class="lbl_">
+    {{'reusable.lbl_home_teacher_access' | translate}}
+  </ion-label>
+
+  <div class="div_img">
+    <img *ngIf="count == 0" src="../../../assets/images/0-out-of-6.png" class="img_points"/>
+    <img *ngIf="count == 1" src="../../../assets/images/1-out-of-6.png" class="img_points"/>
+    <img *ngIf="count == 2" src="../../../assets/images/2-out-of-6.png" class="img_points"/>
+    <img *ngIf="count == 3" src="../../../assets/images/3-out-of-6.png" class="img_points"/>
+    <img *ngIf="count == 4" src="../../../assets/images/4-out-of-6.png" class="img_points"/>
+    <img *ngIf="count == 5" src="../../../assets/images/5-out-of-6.png" class="img_points"/>
+    <img *ngIf="count >= 6" src="../../../assets/images/6-out-of-6.png" class="img_points"/>
+  </div>
+
+  <ion-button class="btn_premium btn_all" expand="block" size="large" (click)="addd()">
+    <img src="../../../assets/images/premium.png" class="btn_img_premium"/>
+    {{'reusable.btn_add' | translate}}
+  </ion-button>
+
+  <ion-label class="lbl_">
+    {{'reusable.lbl_simple' | translate}}
+  </ion-label>
+
+  <ion-button class="btn_premium btn_all" expand="block" size="large" (click)="payment()">
+    <img src="../../../assets/images/premium.png" class="btn_img_premium"/>
+    {{amount ? amount : '0.0'}} €/{{'reusable.lbl_month' | translate }}
+  </ion-button>
+</div>
+
+<div class="div_ads">
+  <img *ngIf="add" src="{{advertise_url}}{{add}}" (click)="ads()" class="img_ads spc_ads"/>
+</div>
+</ion-content>

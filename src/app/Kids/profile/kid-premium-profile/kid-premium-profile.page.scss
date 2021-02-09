@@ -1,0 +1,39 @@
+.bg{
+    --background: #fdf8f1;
+    .img_tool{
+        height: 32px;
+    }
+}
+// .header-ios ion-toolbar:last-of-type {
+//     --border-width: 0 0 0.55px !important;
+//     --border-color: var(--ion-color-primary);
+//   }
+ion-content{
+    --padding-start: 16px;
+    --padding-end: 16px;
+    --padding-top: 16px;
+    --padding-bottom: 16px;
+
+    .div_img{
+        text-align: center;
+        .img_person{
+            height: 100px;
+        }
+        .img_prem{
+            height: 38px;
+        }
+    }
+    
+    .btn_play{
+        color: white;
+        margin-left: 16px;
+        margin-right: 16px;
+    }
+    .lbl_cancel{
+        display: block;
+        font-size: 16px;
+        text-decoration: underline;
+        text-align: center;
+        padding: 32px 16px;
+    }
+}

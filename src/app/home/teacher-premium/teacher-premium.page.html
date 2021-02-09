@@ -1,0 +1,47 @@
+<ion-header class="appBar1">
+  <ion-toolbar class="bg">
+    <img src="../../../assets/images/directional.png" slot ="start" class="img_tool_arrow" (click)="back()"/>
+    <img src="../../../assets/images/logoWithoutIcon.png" class="img_logo"/>
+    <img src="../../../assets/images/gear.png" slot="end" class="img_tool_setting" (click)="settings()"/>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-label class="lbl_premium">
+    {{'reusable.lbl_premiums' | translate}}
+  </ion-label>
+ 
+  <div class="div_img">
+  <img src="../../../assets/images/premium.png" class="img_premium"/>
+</div>
+
+  <ion-label class="lbl_">
+    {{'reusable.lbl_home_teacher_access' | translate}}
+  </ion-label>
+
+  <div class="div_img_points">
+    <img *ngIf="count == 0" src="../../../assets/images/0-out-of-6.png" class="img_points"/>
+    <img *ngIf="count == 1" src="../../../assets/images/1-out-of-6.png" class="img_points"/>
+    <img *ngIf="count == 2" src="../../../assets/images/2-out-of-6.png" class="img_points"/>
+    <img *ngIf="count == 3" src="../../../assets/images/3-out-of-6.png" class="img_points"/>
+    <img *ngIf="count == 4" src="../../../assets/images/4-out-of-6.png" class="img_points"/>
+    <img *ngIf="count == 5" src="../../../assets/images/5-out-of-6.png" class="img_points"/>
+    <img *ngIf="count >= 6" src="../../../assets/images/6-out-of-6.png" class="img_points"/>
+  </div>
+
+  <ion-button class="btn_premium btn_all" expand="block" size="large" (click)="add()">
+    <img src="../../../assets/images/premium.png" class="btn_img_premium"/>
+    {{'reusable.btn_add' | translate}}
+  </ion-button>
+
+  <ion-label class="lbl_">
+    {{'reusable.lbl_simple' | translate}}
+  </ion-label>
+
+  <ion-button class="btn_premium btn_all" expand="block" size="large" (click)="payment()">
+    <img src="../../../assets/images/premium.png" class="btn_img_premium" />
+    {{amount ? amount : '0.0'}} €/{{'reusable.lbl_month' | translate }}
+  </ion-button>
+
+</ion-content>

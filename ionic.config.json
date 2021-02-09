@@ -1,0 +1,8 @@
+{
+  "name": "Mountzoura",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}

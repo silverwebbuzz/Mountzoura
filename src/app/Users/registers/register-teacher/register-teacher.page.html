@@ -1,0 +1,124 @@
+<ion-content>
+
+  <div class="div_profile">
+    <img src="../../assets/images/interface.png" class="img_profile" />
+  </div>
+
+  <form [formGroup]="register_form" autocomplete="off" class="reg_form">
+
+    <ion-item lines="none" class="input-item add space">
+      <ion-input type="email" formControlName="email" placeholder="{{'register.place_email' | translate }}"
+        class="input-box">
+      </ion-input>
+    </ion-item>
+
+    <ion-item no-padding lines="none" class="validator-error error-spc"
+      *ngIf="register_form.controls.email.hasError('required') && register_form.controls.email.touched">
+      <p class="content add-error">{{'register.err_email' | translate }}</p>
+    </ion-item>
+
+    <ion-item no-padding lines="none" class="validator-error"
+      *ngIf="register_form.controls.email.hasError('incorrect') && register_form.controls.email.touched">
+      <p class="content">{{'register.email_exits' | translate}}</p>
+    </ion-item>
+
+    <ion-item no-padding lines="none" class="validator-error"
+      *ngIf="register_form.controls.email.hasError('pattern') && register_form.controls.email.touched">
+      <p class="content">{{'register.email_valid' | translate}}</p>
+    </ion-item>
+
+    <ion-item lines="none" class="input-item add space">
+      <ion-input type="text" formControlName="name" placeholder="{{'register.place_name' | translate }}"
+        class="input-box">
+      </ion-input>
+    </ion-item>
+
+    <ion-item no-padding lines="none" class="validator-error error-spc"
+      *ngIf="register_form.controls.name.hasError('required') && register_form.controls.name.touched">
+      <p class="content add-error">{{'register.err_name' | translate }}</p>
+    </ion-item>
+
+    <ion-item lines="none" class="input-item add space">
+      <ion-input type="text" formControlName="surname" placeholder="{{'register.place_sname' | translate }}"
+        class="input-box">
+      </ion-input>
+    </ion-item>
+
+    <ion-item no-padding lines="none" class="validator-error error-spc"
+      *ngIf="register_form.controls.surname.hasError('required') && register_form.controls.surname.touched">
+      <p class="content add-error">{{'register.err_sname' | translate }}</p>
+    </ion-item>
+
+    <ion-item lines="none" class="input-item space">
+      <ion-select interface="action-sheet" formControlName="area" placeholder="{{ 'register.area' | translate }}"
+        (ionChange)="onChangePropertyType($event)" class="btn-select bg dropWidth" mode="md">
+        <ion-select-option *ngFor="let opt of alist" [value]="opt.id">{{opt.name}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item no-padding lines="none" class="validator-error"
+      *ngIf="register_form.controls.area.hasError('required') && register_form.controls.area.touched">
+      <p class="content">{{ 'register.err_area' | translate }}</p>
+    </ion-item>
+
+    <ion-item lines="none" class="input-item space">
+      <ion-select interface="action-sheet" formControlName="sub_area"
+        placeholder="{{ 'reusable.place_sub_area' | translate }}" class="btn-select bg dropWidth" mode="md">
+        <ion-select-option *ngFor="let opt of sublist" [value]="opt.id">{{opt.name}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item no-padding lines="none" class="validator-error"
+      *ngIf="register_form.controls.sub_area.hasError('required') && register_form.controls.sub_area.touched">
+      <p class="content">{{ 'reusable.err_sub_area' | translate }}</p>
+    </ion-item>
+
+    <ion-item lines="none" class="input-item add">
+      <ion-input type="password" formControlName="password" placeholder="{{'register.place_pass' | translate }}"
+        class="input-box"></ion-input>
+    </ion-item>
+
+    <ion-item no-padding lines="none" class="validator-error error-spc"
+      *ngIf="register_form.controls.password.hasError('required') && register_form.controls.password.touched">
+      <p class="content add-error">{{'register.err_pass' | translate }}</p>
+    </ion-item>
+
+    <ion-item no-padding lines="none" class="validator-error error-spc"
+      *ngIf="register_form.controls.password.hasError('incorrect') && register_form.controls.password.touched">
+      <p class="content add-error">Invalid password.</p>
+    </ion-item>
+
+    <ion-item lines="none" class="input-item add">
+      <ion-input type="password" formControlName="confirmPassword" placeholder="{{'register.repeat_pass' | translate }}"
+        class="input-box">
+      </ion-input>
+    </ion-item>
+
+    <ion-item no-padding lines="none" class="validator-error error-spc"
+      *ngIf="register_form.controls.confirmPassword.hasError('required') && register_form.controls.confirmPassword.touched">
+      <p class="content add-error">{{'register.err_rpt_pass' | translate }}</p>
+    </ion-item>
+    <ion-item no-padding lines="none" class="validator-error error-spc"
+      *ngIf="register_form.controls.confirmPassword.touched && register_form.hasError('MatchPassword','confirmPassword')">
+      <p class="content add-error"> {{'register.not_match_pass' | translate }}</p>
+    </ion-item>
+
+    <ion-item lines="none" class="input-item add space">
+      <ion-input type="number" formControlName="code" placeholder="{{'register.place_code' | translate }}"
+        class="input-box">
+      </ion-input>
+    </ion-item>
+
+  </form>
+
+  <div class="div_empty"></div>
+
+  <div class="dhingla_img">
+    <img src="../../assets/images/teachers.png" class="img_dhingla" />
+  </div>
+
+</ion-content>
+<ion-footer>
+  <ion-button expand="full" size="large" class="btn_footer" (click)="register()">{{'register.register' | translate }} >>
+  </ion-button>
+</ion-footer>

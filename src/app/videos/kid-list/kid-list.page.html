@@ -1,0 +1,183 @@
+<ion-header class="appBar2">
+  <ion-toolbar class="bg">
+    <img src="../../../assets/images/icon.png" slot="start" class="img_tool_logo" />
+    <ion-searchbar id="searchValue" (ionChange)="searchBar($event.target.value)" placeholder="{{'reusable.search' | translate}}" searchIcon="none" class="searchBox"></ion-searchbar>
+    <img src="../../../assets/images/gear.png" slot="end" class="img_tool_setting" (click)="settings()"/>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="role_id === '2'">
+
+  <ion-label class="lbl_head_title">
+    {{'reusable.search_title' | translate}}
+  </ion-label>
+  <form [formGroup]="video_list_form" autocomplete="off" class="form_all">
+
+    <ion-item lines="none" class="input-item space">
+      <ion-select interface="action-sheet" placeholder="{{'reusable.lesson' | translate}}"  formControlName="lesson"
+        class="btn-select bg dropWidth" mode="md" (ionChange)="onChangePropertyType($event)">
+        <ion-select-option *ngFor="let opt of llist" [value]="opt.id">{{opt.name}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <div *ngIf="!g_id">
+      <ion-item no-padding lines="none" class="validator-error error-spc"
+        *ngIf="video_list_form.controls.lesson.hasError('required') && video_list_form.controls.lesson.touched">
+        <p class="content add-error">{{'reusable.err_select' | translate}}</p>
+      </ion-item>
+    </div>
+    <div *ngIf="g_id">
+  <ion-item no-padding lines="none" class="validator-error error-spc"
+      *ngIf="video_list_form.controls.lesson.hasError('required') && video_list_form.controls.lesson.touched">
+      <p class="content add-error">{{'reusable.err_option' | translate}}</p>
+    </ion-item>
+    </div>
+
+    <ion-item lines="none" class="input-item space">
+      <ion-select interface="action-sheet" placeholder="{{'reusable.course' | translate}}" formControlName="course"
+        class="btn-select bg dropWidth" mode="md">
+        <div *ngIf="lass_id">
+        <ion-select-option *ngFor="let opt of clist" [value]="opt.id">{{opt.title}}</ion-select-option>
+      </div>
+        <!-- <ion-select-option *ngIf="!lass_id"></ion-select-option> -->
+      </ion-select>
+    </ion-item>
+
+  <ion-item no-padding lines="none" class="validator-error error-spc"
+      *ngIf="video_list_form.controls.course.hasError('required') && video_list_form.controls.course.touched">
+      <p class="content add-error">{{'reusable.err_option' | translate}}</p>
+    </ion-item>
+
+  </form>
+  <ion-button expand="block" size="large" (click)="submit()" class="btn_all">{{'videos_list.btn_search' | translate}}</ion-button>
+
+  <ion-label class="lbl_latest lbl_all">
+    {{'videos_list.lable2' | translate}}
+  </ion-label>
+
+  <div class="isEmpty" *ngIf="video_result?.length == 0 || video_result == null">
+    <ion-label class="lbl-empty">{{'reusable.empty' | translate}}</ion-label>
+  </div>
+
+  <ng-container  *ngFor="let opt of video_result | slice:0:limit;">
+  <ion-row class="row_list row_all" (click)="video(opt.id,opt.free_video)">
+    <ion-col size="2" class="col_list col_all">
+        <img src="../../../assets/images/video.png" class="img_main img_all"/>
+    </ion-col>
+    <ion-col size="6" class="col_list auto_all">
+      <ion-label class="lbl_quiz_title lbl_title_all">{{opt.title}}</ion-label>
+      <!-- <ion-label class="lbl_unit lbl_desc_all">{{opt.title}}</ion-label> -->
+    </ion-col>
+    <ion-col size="2" class="col_list col_all img_premium_all">
+      <img src="../../../assets/images/premium.png" *ngIf = "opt.free_video == 0" class="img_premium"/>
+    </ion-col>
+    <ion-col size="2" class="col_list col_all img_arrow_all">
+      <img src="../../../assets/images/multimedia-option.png" class="img_arrow"/>
+    </ion-col>
+  </ion-row>
+</ng-container>
+
+<ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+  <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Παρακαλώ περιμένετε...">
+  </ion-infinite-scroll-content>
+</ion-infinite-scroll>
+
+<div class="div_ads">
+  <img *ngIf="add" src="{{advertise_url}}{{add}}" (click)="ads()" class="img_ads spc_ads"/>
+</div>
+
+</ion-content>
+
+
+<ion-content *ngIf="role_id === '4'">
+  <ion-label class="lbl_head_title">
+    {{'reusable.search_title' | translate}}
+  </ion-label>
+<div >
+    <form [formGroup]="teacher_list_form" autocomplete="off" class="form_all">
+  
+      <ion-item lines="none" class="input-item space">
+        <ion-select interface="action-sheet" placeholder="{{'reusable.grade' | translate}}"  formControlName="grade"
+          class="btn-select bg dropWidth" mode="md" (ionChange)="teacherlessionList($event)">
+          <ion-select-option *ngFor="let opt of glist" [value]="opt.id">{{opt.title}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+    
+      <ion-item no-padding lines="none" class="validator-error error-spc"
+          *ngIf="teacher_list_form.controls.grade.hasError('required') && teacher_list_form.controls.grade.touched">
+          <p class="content add-error">{{'reusable.err_option' | translate}}</p>
+        </ion-item>
+  
+      <ion-item lines="none" class="input-item space">
+        <ion-select interface="action-sheet" placeholder="{{'reusable.lesson' | translate}}"  formControlName="lesson"
+          class="btn-select bg dropWidth" mode="md" (ionChange)="onChangecourseType($event)">
+         <div *ngIf="course_id">
+          <ion-select-option *ngFor="let opt of t_llist" [value]="opt.id">{{opt.name}}</ion-select-option>
+        </div>
+        <!-- <ion-select-option *ngIf="!course_id"></ion-select-option> -->
+        </ion-select>
+      </ion-item>
+  
+    <ion-item no-padding lines="none" class="validator-error error-spc"
+        *ngIf="teacher_list_form.controls.lesson.hasError('required') && teacher_list_form.controls.lesson.touched">
+        <p class="content add-error">{{'reusable.err_option' | translate}}</p>
+      </ion-item>
+  
+      <ion-item lines="none" class="input-item space">
+        <ion-select interface="action-sheet" placeholder="{{'reusable.course' | translate}}"  formControlName="course"
+          class="btn-select bg dropWidth" mode="md">
+          <div *ngIf="ts_id">
+          <ion-select-option *ngFor="let opt of tclist" [value]="opt.id">{{opt.title}}</ion-select-option>
+        </div>
+        <!-- <ion-select-option *ngIf="!ts_id"></ion-select-option> -->
+        </ion-select>
+      </ion-item>
+  
+    <ion-item no-padding lines="none" class="validator-error error-spc"
+        *ngIf="teacher_list_form.controls.course.hasError('required') && teacher_list_form.controls.course.touched">
+        <p class="content add-error">{{'reusable.err_option' | translate}}</p>
+      </ion-item>
+  
+    </form>
+</div>
+
+
+
+  <ion-button expand="block" size="large" (click)="teacher()" class="btn_all">{{'videos_list.btn_search' | translate}}</ion-button>
+
+  <ion-label class="lbl_latest lbl_all">
+    {{'videos_list.lable2' | translate}}
+  </ion-label>
+
+  <div class="isEmpty" *ngIf="video_result?.length == 0 || video_result == null ">
+    <ion-label class="lbl-empty">{{'reusable.empty' | translate}}</ion-label>
+  </div>
+
+  <ng-container  *ngFor="let opt of video_result | slice:0:limit;">
+  <ion-row class="row_list row_all" (click)="video(opt.id,opt.free_video)">
+    <ion-col size="2" class="col_list col_all" (click)="start(opt.url)">
+        <img src="../../../assets/images/video.png" class="img_main img_all"/>
+    </ion-col>
+    <ion-col size="6" class="col_list auto_all">
+      <ion-label class="lbl_quiz_title lbl_title_all">{{opt.title}}</ion-label>
+      <!-- <ion-label class="lbl_unit lbl_desc_all">{{opt.title}}</ion-label> -->
+    </ion-col>
+    <ion-col size="2" class="col_list col_all img_premium_all">
+      <img src="../../../assets/images/premium.png" *ngIf = "opt.free_video == 0" class="img_premium"/>
+    </ion-col>
+    <ion-col size="2" class="col_list col_all img_arrow_all">
+      <img src="../../../assets/images/multimedia-option.png" class="img_arrow"/>
+    </ion-col>
+  </ion-row>
+</ng-container>
+
+<ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+  <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Παρακαλώ περιμένετε...">
+  </ion-infinite-scroll-content>
+</ion-infinite-scroll>
+
+<div class="div_ads">
+  <img *ngIf="add" src="{{advertise_url}}{{add}}" (click)="ads()"class="img_ads spc_ads"/>
+</div>
+
+</ion-content>

@@ -1,0 +1,59 @@
+.<ion-header class="appBar1">
+  <ion-toolbar class="bg">
+    <img src="../../../../assets/images/directional.png" slot="start" class="img_tool_arrow" (click)="back()" />
+    <ion-title class="title_all">{{'reusable.quiz_results' | translate}}</ion-title>
+    <img src="../../../../assets/images/gear.png" slot="end" class="img_tool_setting" (click)="settings()" />
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="div_img">
+    <img *ngIf="que_img" src="{{imageUrl}}{{que_img}}" class="img_" />
+    <img src="../../../../assets/images/shapes.png" class="img_ans" />
+  </div>
+
+  <ion-label class="lbl_title">
+    {{que}}
+  </ion-label>
+
+  <ion-label class="lbl_head">
+    {{'reusable.ans_correct' | translate}}
+  </ion-label>
+
+  <div class="div_img">
+    <img *ngIf="correct_img" src="{{imageUrl}}{{correct_img}}" class="img_" />
+  </div>
+
+  <ion-label class="lbl_ans" *ngIf="correct_img == null">
+    {{correct_ans}}
+  </ion-label>
+
+  <ion-label class="lbl_head">
+    {{'reusable.ans_wrong' | translate}}
+  </ion-label>
+  <ng-container *ngFor="let opt of wrong | slice:0:limit;">
+    <ion-label class="lbl_ans" *ngIf="opt.answer_image == null">
+      {{opt.answer_text}}
+    </ion-label>
+    <div class="div_img">
+      <img *ngIf="opt.answer_image" src="{{imageUrl}}{{opt.answer_image}}" class="img_" />
+    </div>
+  </ng-container>
+
+
+  <ion-label class="lbl_head">
+    {{'reusable.stud_choose' | translate}}
+  </ion-label>
+
+  <span *ngIf="choose_ans">
+    <ion-label class="lbl_ans add_extra" *ngIf="choos_img == null">
+      {{choose_ans}}
+    </ion-label>
+  </span>
+
+  <div class="div_img">
+    <img *ngIf="!choos_img == ''" src="{{imageUrl}}{{choos_img}}" class="img_" />
+  </div>
+
+</ion-content>

@@ -1,0 +1,182 @@
+{
+  "cordova-plugin-whitelist": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-whitelist@1.3.3"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-statusbar": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-statusbar@2.4.2"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-device": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-device@2.0.2"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-splashscreen": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-splashscreen@5.0.2"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-ionic-keyboard": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-ionic-keyboard@^2.0.5"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-file": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-file@^6.0.2"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-x-socialsharing": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-x-socialsharing@^5.6.8"
+    },
+    "is_top_level": true,
+    "variables": {
+      "ANDROID_SUPPORT_V4_VERSION": "24.1.1+",
+      "PHOTO_LIBRARY_ADD_USAGE_DESCRIPTION": "This app requires photo library access to function properly.",
+      "PHOTO_LIBRARY_USAGE_DESCRIPTION": "This app requires photo library access to function properly."
+    }
+  },
+  "es6-promise-plugin": {
+    "source": {
+      "type": "registry",
+      "id": "es6-promise-plugin@^4.1.0"
+    },
+    "is_top_level": false,
+    "variables": {}
+  },
+  "cordova-plugin-file-transfer": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-file-transfer@1.7.1"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-file-opener2": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-file-opener2@2.2.1"
+    },
+    "is_top_level": true,
+    "variables": {
+      "ANDROID_SUPPORT_V4_VERSION": "27.+"
+    }
+  },
+  "cordova-plugin-inappbrowser": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-inappbrowser@^4.0.0"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "onesignal-cordova-plugin": {
+    "source": {
+      "type": "registry",
+      "id": "onesignal-cordova-plugin@^2.0.7"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "ionic-plugin-deeplinks": {
+    "source": {
+      "type": "registry",
+      "id": "ionic-plugin-deeplinks@^1.0.20"
+    },
+    "is_top_level": true,
+    "variables": {
+      "URL_SCHEME": "mountzoura",
+      "DEEPLINK_SCHEME": "https",
+      "DEEPLINK_HOST": "mountzoura.gr",
+      "ANDROID_PATH_PREFIX": "/",
+      "ANDROID_2_PATH_PREFIX": "/",
+      "ANDROID_3_PATH_PREFIX": "/",
+      "ANDROID_4_PATH_PREFIX": "/",
+      "ANDROID_5_PATH_PREFIX": "/",
+      "DEEPLINK_2_SCHEME": " ",
+      "DEEPLINK_2_HOST": " ",
+      "DEEPLINK_3_SCHEME": " ",
+      "DEEPLINK_3_HOST": " ",
+      "DEEPLINK_4_SCHEME": " ",
+      "DEEPLINK_4_HOST": " ",
+      "DEEPLINK_5_SCHEME": " ",
+      "DEEPLINK_5_HOST": " "
+    }
+  },
+  "cordova-plugin-facebook4": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-facebook4@^6.2.0"
+    },
+    "is_top_level": true,
+    "variables": {
+      "APP_ID": "712203109385596",
+      "APP_NAME": "MountzouraAPP",
+      "FACEBOOK_HYBRID_APP_EVENTS": "false",
+      "FACEBOOK_ANDROID_SDK_VERSION": "5.13.0"
+    }
+  },
+  "cordova-plugin-buildinfo": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-buildinfo@4.0.0"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-browsertab": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-browsertab@0.2.0"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-compat": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-compat@^1.0.0"
+    },
+    "is_top_level": false,
+    "variables": {}
+  },
+  "cordova-plugin-ionic-webview": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-ionic-webview@^5.0.0"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-stripe": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-stripe@^1.5.3"
+    },
+    "is_top_level": true,
+    "variables": {}
+  }
+}

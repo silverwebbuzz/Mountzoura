@@ -1,0 +1,89 @@
+.bg {
+  --background: #fdf8f1;
+  .img_tool {
+    height: 32px;
+  }
+  .searchBox {
+    --background: #fdf8f1;
+    border: 1px solid var(--ion-color-primary);
+    height: 34px;
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-inline-start: 0px;
+    padding-inline-end: 0px;
+    border-radius: 10px;
+  }
+}
+// .header-ios ion-toolbar:last-of-type {
+//   --border-width: 0 0 0.55px !important;
+//   --border-color: var(--ion-color-primary);
+// }
+// .ion-searchbar ::placeholder{
+//     font-size: 14px !important;
+// }
+.lbl_head_title {
+  display: block;
+  font-size: 16px;
+  text-align: center;
+  width: 75%;
+  margin: 0 auto;
+  padding: 16px;
+}
+// .select-icon{
+//     display: none !important;
+// }
+// .select-icon-inner{
+//     display: none !important;
+// }
+ion-content {
+  --padding-bottom: 16px;
+}
+.lbl_latest {
+  display: block;
+  padding: 8px;
+}
+
+.row_list {
+  .col_list {
+    .img_main {
+      height: 48px;
+    }
+    .lbl_quiz_title {
+      display: block;
+    }
+    .lbl_unit {
+      display: block;
+    }
+    .img_premium {
+      height: 34px;
+      width: 34px;
+    }
+    .img_arrow {
+      height: 28px;
+      width: 28px;
+    }
+  }
+}
+
+.lbl_ {
+  display: block;
+  text-align: center;
+  // width: 80%;
+  padding: 16px;
+}
+.btn_premium {
+  color: white;
+  width: 90%;
+  margin: 0 auto;
+  text-transform: none;
+  --border-radius: 8px;
+
+  .btn_img_premium {
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    left: 0;
+  }
+}

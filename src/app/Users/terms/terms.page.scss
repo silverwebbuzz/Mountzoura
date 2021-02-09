@@ -1,0 +1,45 @@
+.bg {
+    --background: #f1d6ad;
+    text-align: center;
+    .img_tool_arrow {
+      height: 32px;
+      padding-left: 8px;
+    }
+    .img_head {
+      width: 75%;
+    }
+  }
+  ion-content {
+    --padding-start: 16px;
+    --padding-end: 16px;
+    --padding-top: 16px;
+    --padding-bottom: 16px;
+  
+    .lbl_title {
+      display: block;
+      font-size: 22px;
+      text-decoration: underline;
+      padding: 0px 0px 16px 0px;
+    }
+  
+    .lbl_ {
+      display: block;
+      font-size: 18px;
+      padding: 8px 0px;
+      // text-decoration: underline;
+    }
+    .lbl_dont {
+      display: block;
+      padding: 8px 0px;
+      text-decoration: underline;
+      font-size: 13px;
+      text-align: center;
+    }
+    .btn_agree {
+      color: white;
+      margin: 48px 0px 16px 0px;
+      text-transform: none;
+      --border-radius: 8px;
+    }
+  }
+  

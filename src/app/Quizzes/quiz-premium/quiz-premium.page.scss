@@ -1,0 +1,70 @@
+.bg{
+    --background: #fdf8f1;
+    .img_tool{
+        height: 32px;
+    }
+}
+// .header-ios ion-toolbar:last-of-type {
+//     --border-width: 0 0 0.55px !important;
+//     --border-color: var(--ion-color-primary);
+//   }
+ion-content{
+    --padding-start: 0px;
+    --padding-end: 0px;
+    --padding-top: 0px;
+    --padding-bottom: 16px;
+
+    .lbl_premium{
+        display: block;
+        text-align: center;
+        // width: 80%;
+        padding: 16px;
+    }
+    .div_img{
+        text-align: center;
+        padding: 16px 0px;
+        .img_premium{
+            height: 100px;
+            // width: 75px;
+        }
+    }
+    
+    .lbl_{
+        display: block;
+        text-align: center;
+        // width: 80%;
+        padding: 16px;
+    }
+    .btn_premium{
+        color: white;
+        width: 90%;
+        margin: 0 auto;
+        .btn_img_premium{
+            height: 30px;
+            width: 30px;
+            position: absolute;
+            left: 0;
+        }
+    }
+}
+.row_list{
+    .col_list{
+        .img_main{
+            height: 48px;
+        }
+        .lbl_quiz_title{
+            display: block;
+        }
+        .lbl_unit{
+            display: block;
+        }
+        .img_premium{
+            height: 34px;
+            width: 34px;
+        }
+        .img_arrow{
+            height: 28px;
+            width: 28px;
+        }
+    }
+}

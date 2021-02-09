@@ -1,0 +1,49 @@
+<ion-tabs>
+
+  <ion-tab-bar slot="bottom" class="tab_bar">
+    
+      <ion-tab-button tab="home" *ngIf="roll == '2'">
+        <img src="../../assets/images/buildings.png" class="tab_icons"/>
+        <ion-label class="tab_lbl">{{'tabs.home' | translate}}</ion-label>
+      </ion-tab-button>
+     
+      <ion-tab-button tab="home-teacher" *ngIf="roll == '4'">
+        <img src="../../assets/images/buildings.png" class="tab_icons"/>
+        <ion-label class="tab_lbl">{{'tabs.home' | translate}}</ion-label>
+      </ion-tab-button>
+
+    <ion-tab-button tab="kid-added" *ngIf="roll == '2'">
+      <!-- <ion-icon name="home"></ion-icon> -->
+      <img src="../../assets/images/boy.png" class="tab_icons"/>
+      <ion-label class="tab_lbl">{{'tabs.kids' | translate}}</ion-label>
+    </ion-tab-button>
+  
+    <ion-tab-button tab="student-added" *ngIf="roll == '4'">
+      <!-- <ion-icon name="home"></ion-icon> -->
+      <img src="../../assets/images/boy.png" class="tab_icons"/>
+      <ion-label class="tab_lbl">{{'tabs.students' | translate}}</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="kids-quiz-list" *ngIf="roll == '2'">
+      <img src="../../assets/images/fit.png" class="tab_icons"/>
+      <ion-label class="tab_lbl">{{'tabs.quizzes' | translate}}</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="teachers-quiz-list" *ngIf="roll == '4'">
+      <img src="../../assets/images/fit.png" class="tab_icons"/>
+      <ion-label class="tab_lbl">{{'tabs.quizzes' | translate}}</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="videos">
+      <img src="../../assets/images/logotype.png" class="tab_icons"/>
+      <ion-label class="tab_lbl">{{'tabs.video' | translate}}</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="pdfs">
+      <img src="../../assets/images/business-and-finance.png" class="tab_icons"/>
+      <ion-label class="tab_lbl">{{'tabs.pdf' | translate}}</ion-label>
+    </ion-tab-button>
+
+  </ion-tab-bar>
+  <app-kids-quiz-list></app-kids-quiz-list>
+</ion-tabs>

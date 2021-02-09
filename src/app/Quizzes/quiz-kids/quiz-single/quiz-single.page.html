@@ -1,0 +1,47 @@
+<ion-header class="appBar1">
+  <ion-toolbar class="bg">
+    <img src="../../../../assets/images/directional.png" slot="start" class="img_tool_arrow" (click)="back()" />
+    <img src="../../../../assets/images/logoWithoutIcon.png" class="img_logo" />
+    <img src="../../../../assets/images/gear.png" slot="end" class="img_tool_setting" (click)="settings()" />
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="div_img">
+    <img *ngIf="!quize_img" src="{{user_not_found_place_holder}}" class="img_casino" />
+    <img *ngIf="quize_img" src="{{imageUrl}}{{quize_img}}" class="img_casino" />
+  </div>
+
+  <ion-label class="lbl_title">{{quize_title}}</ion-label>
+
+  <ion-button expand="block" size="large" class="btn_all" (click)='play()'>{{'single.btn_play_quiz' | translate}}
+  </ion-button>
+
+  <form [formGroup]="quiz_start_form" autocomplete="off" class="form_all">
+
+    <ion-item lines="none" class="input-item space" *ngIf="roll_id == 4">
+      <ion-select interface="action-sheet" placeholder="{{'reusable.select' | translate}}" formControlName="student"
+        class="btn-select bg dropWidth" mode="md">
+        <ion-select-option value="all">{{'reusable.lbl_assign' | translate}}</ion-select-option>
+        <ion-select-option *ngFor="let opt of slist" [value]="opt.kid_unique_id">{{opt.kidName}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <div *ngIf="roll_id == 4">
+      <ion-item no-padding lines="none" class="validator-error error-spc"
+        *ngIf="quiz_start_form.controls.student.hasError('required') && quiz_start_form.controls.student.touched">
+        <p class="content add-error">{{'reusable.err_option' | translate}}</p>
+      </ion-item>
+    </div>
+  </form>
+
+  <ion-button *ngIf="roll_id == 4" expand="block" size="large" class="btn_set btn_all" (click)="submit()">
+    {{'reusable.set' | translate}}</ion-button>
+
+  <!-- <ion-button expand="block" size="large" class="btn_all" *ngIf="roll_id == 2" (click)='homework()'>{{'reusable.btn_work' | translate}}</ion-button> -->
+
+  <div class="div_ads">
+    <img *ngIf="add" src="{{advertise_url}}{{add}}" (click)="ads()" class="img_ads spc_ads" />
+  </div>
+
+</ion-content>

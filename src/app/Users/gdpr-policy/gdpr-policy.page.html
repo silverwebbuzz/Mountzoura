@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar class="bg">
+    <img src="../../../assets/images/directional.png" slot="start" class="img_tool_arrow" (click)="back()"/>
+    <img src="../../assets/images/logoWithoutIcon.png" class="img_head"/>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-label color="primary" class="lbl_title">{{'GDPR.title' | translate}}</ion-label>
+
+  <ion-label class="lbl_">
+    <h2 [innerHTML]="term ? term : '' "></h2>
+  </ion-label>
+
+</ion-content>

@@ -1,0 +1,79 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-browsertab": {
+      "PACKAGE_NAME": "$(PRODUCT_BUNDLE_IDENTIFIER)"
+    },
+    "cordova-plugin-buildinfo": {
+      "PACKAGE_NAME": "$(PRODUCT_BUNDLE_IDENTIFIER)"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "$(PRODUCT_BUNDLE_IDENTIFIER)"
+    },
+    "cordova-plugin-facebook4": {
+      "APP_ID": "712203109385596",
+      "APP_NAME": "MountzouraAPP",
+      "FACEBOOK_HYBRID_APP_EVENTS": "false",
+      "FACEBOOK_ANDROID_SDK_VERSION": "5.13.0",
+      "PACKAGE_NAME": "$(PRODUCT_BUNDLE_IDENTIFIER)"
+    },
+    "cordova-plugin-file": {
+      "PACKAGE_NAME": "$(PRODUCT_BUNDLE_IDENTIFIER)"
+    },
+    "cordova-plugin-file-opener2": {
+      "PACKAGE_NAME": "$(PRODUCT_BUNDLE_IDENTIFIER)"
+    },
+    "cordova-plugin-file-transfer": {
+      "PACKAGE_NAME": "$(PRODUCT_BUNDLE_IDENTIFIER)"
+    },
+    "cordova-plugin-inappbrowser": {
+      "PACKAGE_NAME": "$(PRODUCT_BUNDLE_IDENTIFIER)"
+    },
+    "cordova-plugin-ionic-keyboard": {
+      "PACKAGE_NAME": "$(PRODUCT_BUNDLE_IDENTIFIER)"
+    },
+    "cordova-plugin-ionic-webview": {
+      "PACKAGE_NAME": "$(PRODUCT_BUNDLE_IDENTIFIER)"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "$(PRODUCT_BUNDLE_IDENTIFIER)"
+    },
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "$(PRODUCT_BUNDLE_IDENTIFIER)"
+    },
+    "cordova-plugin-stripe": {
+      "PACKAGE_NAME": "$(PRODUCT_BUNDLE_IDENTIFIER)"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "$(PRODUCT_BUNDLE_IDENTIFIER)"
+    },
+    "cordova-plugin-x-socialsharing": {
+      "PHOTO_LIBRARY_ADD_USAGE_DESCRIPTION": "This app requires photo library access to function properly.",
+      "PHOTO_LIBRARY_USAGE_DESCRIPTION": "This app requires photo library access to function properly.",
+      "PACKAGE_NAME": "$(PRODUCT_BUNDLE_IDENTIFIER)"
+    },
+    "ionic-plugin-deeplinks": {
+      "URL_SCHEME": "mountzoura",
+      "DEEPLINK_SCHEME": "https",
+      "DEEPLINK_HOST": "mountzoura.gr",
+      "PACKAGE_NAME": "$(PRODUCT_BUNDLE_IDENTIFIER)"
+    },
+    "onesignal-cordova-plugin": {
+      "PACKAGE_NAME": "$(PRODUCT_BUNDLE_IDENTIFIER)"
+    }
+  },
+  "dependent_plugins": {
+    "cordova-plugin-compat": {
+      "PACKAGE_NAME": "$(PRODUCT_BUNDLE_IDENTIFIER)"
+    },
+    "es6-promise-plugin": {
+      "PACKAGE_NAME": "$(PRODUCT_BUNDLE_IDENTIFIER)"
+    }
+  }
+}

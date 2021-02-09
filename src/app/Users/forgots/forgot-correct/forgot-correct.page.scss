@@ -1,0 +1,28 @@
+.div_logo {
+    text-align: center;
+    margin: 48px;
+    .img_logo {
+      width: 200px;
+    }
+  }
+  .lbl_txt {
+    text-align: center;
+    display: block;
+    font-size: 18px;
+    line-height: 1.3;
+    width: 75%;
+    margin: 0 auto;
+    padding: 0px 0px 32px 0px;
+  }
+  .div_chk{
+      text-align: center;
+    .img_check {
+        height: 125px;
+        width: 125px;
+      }
+  }
+  .btn_footer {
+    margin: 0px;
+    color: white;
+    text-transform: none;
+  }

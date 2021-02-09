@@ -1,0 +1,57 @@
+<ion-header class="appBar1">
+  <ion-toolbar class="bg">
+    <img src="../../../assets/images/directional.png" slot="start" class="img_tool_arrow" (click)="back()" />
+    <ion-title class="title_all">{{'settings.request' | translate}}</ion-title>
+    <img src="../../../assets/images/icon.png" slot="end" class="img_tool_logo" />
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+  <div>
+    <ion-row class="row_list row_all">
+      <ion-col size="2" class="col_list col_all">
+        <img *ngIf="gender == 'boy'" src="../../../assets/images/teacher-2.png" class="img_main img_all" />
+        <img *ngIf="gender == 'girl'" src="../../../assets/images/teacher-1.png" class="img_main img_all" />
+      </ion-col>
+      <ion-col size="10" class="col_list col_">
+        <ion-label *ngIf="status == '0'" class="lbl_quiz_title lbl_title_all">
+          <!-- Teacher
+          {{teacherName}} {{teacherSurname}} wants to connect with your kid {{kidName}} to send him/her Quizzes,
+          videos and PDFs as homework. Is that OK with you? -->
+          Ο δάσκαλος {{teacherName}} {{teacherSurname}} θέλει να συνδεθεί με το παιδί {{kidName}} για να μπορεί να του στέλνει καθήκοντα κουίζ, βίντεο και φύλλα εργασίας. Το αποδέχεσαι;
+        </ion-label>
+
+        <ion-label *ngIf="status == '1'" class="lbl_quiz_title lbl_title_all">
+          <!-- You have given access
+          to teacher {{teacherName}} {{teacherSurname}} to connect with the kid {{kidName}} and the teacher
+          can send quizzes, videos, PDFs and see the results from your kid. -->
+          Έχεις δώσει πρόσβαση στον/στην δάσκαλο/α {{teacherName}} {{teacherSurname}} να συνδεθεί με το παιδί {{kidName}} και θα μπορεί να στέλνει σαν καθήκοντα κουίζ, βίντεο και φύλλα εργασίας, καθώς επίσης και να παρακολουθεί τα αποτελεσματα του παιδιού.
+        </ion-label>
+
+        <ion-row class="btn_row" *ngIf="status == '0'">
+          <ion-col size="6" class="btn_col">
+            <ion-button expand="block" size="small" class="btns_" (click)="kidConnectionStatus(id,1)">
+              {{'single.btn_approve' | translate}}
+            </ion-button>
+          </ion-col>
+          <ion-col size="6" class="btn_col">
+            <ion-button class="lbl_red" expand="block" size="small" color="medium" class="btns_"
+              (click)="kidConnectionStatus(id,2)">
+              {{'single.btn_cancel' | translate}}
+            </ion-button>
+          </ion-col>
+        </ion-row>
+        <ion-row class="btn_row" *ngIf="status == '1'">
+        <ion-col class="btn_col">
+          <ion-button expand="block" size="small" class="btn_" (click)="kiddisConnectionStatus(id,3)">
+            {{'single.btn_disconnect' | translate}}
+          </ion-button>
+        </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </div>
+
+</ion-content>
